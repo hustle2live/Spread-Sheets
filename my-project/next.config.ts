@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
    assetPrefix: '.',
    images: { unoptimized: true },
    output: 'export',
-   basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+   basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? '',
    distDir: './build'
 };
 
