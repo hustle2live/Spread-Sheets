@@ -6,15 +6,13 @@ import { useRouter } from 'next/navigation';
 import VercelSVG from '@/public/vercel.svg';
 import NextSVG from '@/public/next.svg';
 
-import FileSVG from '../../public/file.svg';
-import WindowSVG from '../../public/window.svg';
-import GlobeSVG from '../../public/globe.svg';
+import FileSVG from '@/public/file.svg';
+import WindowSVG from '@/public/window.svg';
+import GlobeSVG from '@/public/globe.svg';
 
 import { imageLoader } from '@/components/imageLoader';
 
-// import NextSVG from '../../public/next.svg';
-// import VercelSVG from '../../public/vercel.svg';
-// import { imageLoader } from './components/imageLoader';
+
 
 export default function Home() {
    const router = useRouter();
