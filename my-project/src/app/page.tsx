@@ -4,11 +4,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-import VercelSVG from '@/public/vercel.svg';
-import NextSVG from '@/public/next.svg';
-
-import TTNForm from '@/assets/pdf/TTN-form.pdf';
-import TTNJournal from '../assets/pdf/';
+import TTNJournal from '../assets/pdf/Salary-1.pdf';
+// import TTNJournal from '@/public/pdf/Salary-1.pdf';
 
 import FileSVG from '@/public/file.svg';
 import WindowSVG from '@/public/window.svg';
@@ -19,8 +16,14 @@ import { imageLoader } from '@/components/imageLoader';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
+import PdfViewer from './components/pdfViewer';
+
+import Link from 'next/link';
+
 export default function Home() {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+   const myPdf = '@/assets/pdf/Salary-1.pdf';
 
    const navigation = [
       { name: 'menu', href: '#' },
@@ -197,8 +200,22 @@ export default function Home() {
                </p>
                <div className='container mt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
                   <div className='rounded-2xl border border-indigo-100 text-start'>
-                     <div className='min-h-56'>
-                        <embed src='@/assets/pdf/TTN-form.pdf' type='application/pdf' title='Інформаційна таблиця' />
+                     <div className='min-h-56 relative overflow-hidden'>
+                        {/* <iframe
+                           src='/Salary.pdf'
+                           width='100%'
+                           height='100%'
+                           title='pdf file'
+                        /> */}
+                        {/* <Link
+                           className='footer__oferta text-muted z-1 me-lg-5 flex-lg-shrink-1'
+                           href={'/pdf/Salary-2.pdf'}
+                           // href={'/Salary.pdf'}
+                           target='_blank'
+                        >
+                           Оферта
+                        </Link> */}
+                        <PdfViewer url='/Salary.pdf' />
                      </div>
                      <hr className='w-full' />
                      <div className='p-6'>
@@ -211,9 +228,7 @@ export default function Home() {
                      </div>
                   </div>
                   <div className='rounded-2xl border border-indigo-100 text-start'>
-                     <div className='min-h-56'>
-                        <embed src='@/assets/pdf/TTN-journal.pdf' type='application/pdf' title='Розрахункова таблиця' />
-                     </div>
+                     <div className='min-h-56'></div>
                      <hr className='w-full' />
                      <div className='p-6'>
                         <p className='my-2 text-indigo-300 font-semibold py-2'>Розрахункова таблиця</p>
@@ -226,7 +241,63 @@ export default function Home() {
                   </div>
                   <div className='rounded-2xl border border-indigo-100 text-start'>
                      <div className='min-h-56'>
-                        <iframe src='' type='application/pdf' title='Інформаційна таблиця' />
+                        <iframe
+                           src='../assets/pdf/Salary-1.pdf'
+                           width='100%'
+                           height='100%'
+                           title='Embedded PDF Viewer'
+                        ></iframe>
+                     </div>
+                     <hr className='w-full' />
+                     <div className='p-6'>
+                        <p className='my-2 text-indigo-300 font-semibold py-2'></p>
+                        <p>
+                           Таблиця, приведена вище, є прикладом інформаціної таблиці. Вона призначена лише для
+                           зберігання інформації та пошуку певних даних у ній. Тим не менше, вона може бути частиною
+                           багатосторінкового табличного файлу та виконувати певні функції у такому файлі.
+                        </p>
+                     </div>
+                  </div>
+                  <div className='rounded-2xl border border-indigo-100 text-start'>
+                     <div className='min-h-56'>
+                        <iframe
+                           src='../assets/pdf/Salary-1.pdf#toolbar=0'
+                           width='100%'
+                           height='100%'
+                           title='Non-downloadable PDF Viewer'
+                        ></iframe>
+                     </div>
+                     <hr className='w-full' />
+                     <div className='p-6'>
+                        <p className='my-2 text-indigo-300 font-semibold py-2'></p>
+                        <p>
+                           Таблиця, приведена вище, є прикладом інформаціної таблиці. Вона призначена лише для
+                           зберігання інформації та пошуку певних даних у ній. Тим не менше, вона може бути частиною
+                           багатосторінкового табличного файлу та виконувати певні функції у такому файлі.
+                        </p>
+                     </div>
+                  </div>
+                  <div className='rounded-2xl border border-indigo-100 text-start'>
+                     <div className='min-h-56'>
+                        <object
+                           data='../assets/pdf/Salary-1.pdf'
+                           type='application/pdf'
+                           width='100%'
+                           height='100%'
+                           title='Embedded PDF Viewer'
+                        >
+                           <iframe
+                              data='../assets/pdf/Salary-1.pdf'
+                              width='100%'
+                              height='100%'
+                              title='Fallback PDF Viewer'
+                           >
+                              <p>
+                                 Your browser does not support PDFs.
+                                 <a href='../assets/pdf/Salary-1.pdf'>Download the PDF</a>
+                              </p>
+                           </iframe>
+                        </object>
                      </div>
                      <hr className='w-full' />
                      <div className='p-6'>
