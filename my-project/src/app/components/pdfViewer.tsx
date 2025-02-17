@@ -28,11 +28,11 @@ const PdfViewer: React.FC<TProps> = ({ url }: TProps) => {
    }, []);
 
    // 🔹 Функція зміни сторінки
-   const goToNextPage = () => setPageNumber((prev) => Math.min(prev + 1, numPages || 1));
+   const goToNextPage = () => setPageNumber((prev) => Math.min(prev + 1, numPages ?? 1));
    const goToPrevPage = () => setPageNumber((prev) => Math.max(prev - 1, 1));
 
    // 🔹 Функції зміни масштабу
-   const zoomIn = () => setScale((prev) => Math.min(prev + 0.2, 3));
+   const zoomIn = () => setScale((prev) => Math.min(prev + 0.2, 4));
    const zoomOut = () => setScale((prev) => Math.max(prev - 0.2, 0.5));
 
    return (
@@ -63,18 +63,5 @@ const PdfViewer: React.FC<TProps> = ({ url }: TProps) => {
       </div>
    );
 };
-
-//    const [numPages, setNumPages] = useState<number | null>(null);
-
-//    return (
-//       <div className='pdf-container'>
-//          <Document file={url} onLoadSuccess={({ numPages }) => setNumPages(numPages)}>
-//             {Array.from(new Array(numPages), (_, index) => (
-//                <Page key={`page_${index + 1}`} width={380} pageNumber={index + 1} />
-//             ))}
-//          </Document>
-//       </div>
-//    );
-// };
 
 export default PdfViewer;

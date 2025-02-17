@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
-import './globals.css';
+import './globals.scss';
 
 export const metadata: Metadata = {
-   title: 'Yuras SpreadSheets',
+   title: 'Yuras SpreadSheets - Електронні Таблиці Юрія',
    description: 'Побудова інтерактивних Таблиць на всі випадки життя'
 };
 
