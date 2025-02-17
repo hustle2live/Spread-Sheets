@@ -1,10 +1,12 @@
 'use client';
-// import { useRouter } from 'next/navigation';
 
 import { Header } from './components/header';
 import { Hero } from './components/hero';
-import { TablesGrid } from './components/tablesGrid';
+
+// import { TablesGrid } from './components/tablesGrid';
+
 import { Footer } from './components/footer';
+import { Content } from './components/mainContent';
 
 export default function Home() {
    // const router = useRouter();
@@ -14,7 +16,7 @@ export default function Home() {
          <Header />
          <main id='main'>
             <Hero />
-            <TablesGrid />
+            <Content />
          </main>
          <Footer />
       </div>

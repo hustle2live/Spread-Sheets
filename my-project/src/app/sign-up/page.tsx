@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+
 import { FormElement } from '@/components/form';
 
 const SignUp: React.FC = () => {

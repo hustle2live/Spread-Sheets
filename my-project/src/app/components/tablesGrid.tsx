@@ -7,13 +7,7 @@ const TablesGrid: React.FC = () => {
 
    return (
       <div id='content' className='bg-transparent py-24 flex flex-col items-center text-center'>
-         <h2 className='text-4xl font-semibold tracking-tight text-balance text-gray-900'>
-            Як використовувати електронні таблиці?
-         </h2>
-         <p className='mt-4 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 w-1/2'>
-            Цей сайт присвячено темі розробки корисних і ефективних методів/можливостей використання електронних таблиць
-            у різних сферах діяльності
-         </p>
+
          <div className='container mt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
             <div className='rounded-xl border border-neutral-200 transition-all hover:border-gray-400 text-start'>
                <div className='card-view h-56 relative overflow-scroll'>
