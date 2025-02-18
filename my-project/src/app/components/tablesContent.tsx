@@ -5,15 +5,15 @@ import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { imageLoader } from '../components/imageLoader';
 
+import tableIconsBoth from '@/assets/pictures/xls-vs-sheets.png';
+import Excel from '@/assets/pictures/MS-Excel-Masterclass-1.webp';
+import Sheets from '@/assets/pictures/google-sheets-tables.png';
+
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 
 const TablesContent: React.FC = () => {
    const [isVisible, setIsVisible] = useState(false);
    const scrollReference = useRef<HTMLDivElement | null>(null);
-
-   const tableIconsBoth = '/pictures/xls-vs-sheets.png';
-   const Excel = '/pictures/MS-Excel-Masterclass-1.webp';
-   const Sheets = '/pictures/google-sheets-tables.png';
 
    const duplicateItems = async () => {
       if (!scrollReference.current || !scrollReference.current?.firstChild) return;
@@ -100,12 +100,13 @@ const TablesContent: React.FC = () => {
             </div>
             <p>
                Найбільш розповсюдженими електронними таблицями, які наразі використовує пересічний користувач, є{' '}
-               <strong className='text-gray-800'>Excel</strong> та <strong className='text-gray-800'>Google Sheets</strong>.
+               <strong className='text-gray-800'>Excel</strong> та{' '}
+               <strong className='text-gray-800'>Google Sheets</strong>.
                <br /> Вони допомагають у веденні розрахунків, аналізі даних і автоматизації процесів.
             </p>
             <p>
-               <strong className='text-gray-800'>На цьому сайті</strong> ви знайдете цікаві розробки, створені автором. Можливо, вони надихнуть
-               вас на власні проекти або допоможуть удосконалити те, що ви вже використовуєте.
+               <strong className='text-gray-800'>На цьому сайті</strong> ви знайдете цікаві розробки, створені автором.
+               Можливо, вони надихнуть вас на власні проекти або допоможуть удосконалити те, що ви вже використовуєте.
             </p>
             <p>Ви можете отримати консультації автора, чи замовити проект для реалізації своїх власних задач</p>
             <button

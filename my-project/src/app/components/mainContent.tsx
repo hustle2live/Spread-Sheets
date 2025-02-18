@@ -1,6 +1,6 @@
 import TablesContent from './tablesContent';
 import { TablesGrid } from './tablesGrid';
-import { UserCircleIcon, LightBulbIcon } from '@heroicons/react/20/solid';
+// import { UserCircleIcon, LightBulbIcon } from '@heroicons/react/20/solid';
 
 const TableClasses: React.FC = () => {
    return (

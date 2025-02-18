@@ -2,16 +2,23 @@
 
 import dynamic from 'next/dynamic';
 
+const baseUrl = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_BASE_PATH : ''
+
+const PdfView1 = `${baseUrl}/pdf/Salary-1.pdf`;
+const PdfView2 = `${baseUrl}/pdf/Salary-2.pdf`;
+const PdfView3 = `${baseUrl}/pdf/Time-table.pdf`;
+const PdfView4 = `${baseUrl}/pdf/TTN-form.pdf`;
+const PdfView5 = `${baseUrl}/pdf/TTN-journal.pdf`;
+
 const TablesGrid: React.FC = () => {
    const PdfViewer = dynamic(() => import('@/components/pdfViewer'), { ssr: false });
 
    return (
       <div id='content' className='bg-transparent flex flex-col items-center text-center'>
-
          <div className='container mt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 md:gap-16 md:px-24'>
             <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
                <div className='card-view h-60 relative overflow-hidden'>
-                  <PdfViewer url='/pdf/Salary-1.pdf' />
+                  <PdfViewer url={PdfView1} />
                </div>
                <hr className='w-full' />
                <div className='p-6'>
@@ -26,7 +33,7 @@ const TablesGrid: React.FC = () => {
 
             <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
                <div className='card-view h-60 relative overflow-hidden'>
-                  <PdfViewer url='/pdf/Salary-2.pdf' />
+                  <PdfViewer url={PdfView2} />
                </div>
                <hr className='w-full' />
                <div className='p-6'>
@@ -42,7 +49,7 @@ const TablesGrid: React.FC = () => {
 
             <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
                <div className='card-view h-60 relative overflow-hidden'>
-                  <PdfViewer url='/pdf/Time-table.pdf' />
+                  <PdfViewer url={PdfView3} />
                </div>
                <hr className='w-full' />
                <div className='p-6'>
@@ -58,7 +65,7 @@ const TablesGrid: React.FC = () => {
 
             <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
                <div className='card-view h-60 relative overflow-hidden'>
-                  <PdfViewer url='/pdf/TTN-form.pdf' />
+                  <PdfViewer url={PdfView4} />
                </div>
                <hr className='w-full' />
                <div className='p-6'>
@@ -75,7 +82,7 @@ const TablesGrid: React.FC = () => {
             </div>
             <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
                <div className='card-view h-60 relative overflow-hidden'>
-                  <PdfViewer url='/pdf/TTN-journal.pdf' />
+                  <PdfViewer url={PdfView5} />
                </div>
                <hr className='w-full' />
                <div className='p-6'>

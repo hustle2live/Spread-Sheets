@@ -7,7 +7,11 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 
-pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+const baseUrl = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_BASE_PATH : '';
+
+const worker = `${baseUrl}/pdf.worker.min.mjs`;
+
+pdfjs.GlobalWorkerOptions.workerSrc = worker;
 
 type TProps = { url: string };
 
