@@ -6,11 +6,11 @@ const TablesGrid: React.FC = () => {
    const PdfViewer = dynamic(() => import('@/components/pdfViewer'), { ssr: false });
 
    return (
-      <div id='content' className='bg-transparent py-24 flex flex-col items-center text-center'>
+      <div id='content' className='bg-transparent flex flex-col items-center text-center'>
 
-         <div className='container mt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
-            <div className='rounded-xl border border-neutral-200 transition-all hover:border-gray-400 text-start'>
-               <div className='card-view h-56 relative overflow-scroll'>
+         <div className='container mt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 md:gap-16 md:px-24'>
+            <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
+               <div className='card-view h-60 relative overflow-hidden'>
                   <PdfViewer url='/pdf/Salary-1.pdf' />
                </div>
                <hr className='w-full' />
@@ -24,8 +24,8 @@ const TablesGrid: React.FC = () => {
                </div>
             </div>
 
-            <div className='rounded-xl border border-neutral-200 transition-all hover:border-gray-400 text-start'>
-               <div className='card-view h-56 relative overflow-scroll'>
+            <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
+               <div className='card-view h-60 relative overflow-hidden'>
                   <PdfViewer url='/pdf/Salary-2.pdf' />
                </div>
                <hr className='w-full' />
@@ -40,8 +40,8 @@ const TablesGrid: React.FC = () => {
                </div>
             </div>
 
-            <div className='rounded-xl border border-neutral-200 transition-all hover:border-gray-400 text-start'>
-               <div className='card-view h-56 relative overflow-scroll'>
+            <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
+               <div className='card-view h-60 relative overflow-hidden'>
                   <PdfViewer url='/pdf/Time-table.pdf' />
                </div>
                <hr className='w-full' />
@@ -56,8 +56,8 @@ const TablesGrid: React.FC = () => {
                </div>
             </div>
 
-            <div className='rounded-xl border border-neutral-200 transition-all hover:border-gray-400 text-start'>
-               <div className='card-view h-56 relative overflow-scroll'>
+            <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
+               <div className='card-view h-60 relative overflow-hidden'>
                   <PdfViewer url='/pdf/TTN-form.pdf' />
                </div>
                <hr className='w-full' />
@@ -73,8 +73,8 @@ const TablesGrid: React.FC = () => {
                   </p>
                </div>
             </div>
-            <div className='rounded-xl border border-neutral-200 transition-all hover:border-gray-400 text-start'>
-               <div className='card-view h-56 relative overflow-scroll'>
+            <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
+               <div className='card-view h-60 relative overflow-hidden'>
                   <PdfViewer url='/pdf/TTN-journal.pdf' />
                </div>
                <hr className='w-full' />

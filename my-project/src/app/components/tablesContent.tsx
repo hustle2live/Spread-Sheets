@@ -100,17 +100,14 @@ const TablesContent: React.FC = () => {
             </div>
             <p>
                Найбільш розповсюдженими електронними таблицями, які наразі використовує пересічний користувач, є{' '}
-               <strong>Excel</strong> та <strong>Google Sheets</strong>.
+               <strong className='text-gray-800'>Excel</strong> та <strong className='text-gray-800'>Google Sheets</strong>.
                <br /> Вони допомагають у веденні розрахунків, аналізі даних і автоматизації процесів.
             </p>
             <p>
-               На цьому сайті ви знайдете цікаві розробки, створені автором. Можливо, вони надихнуть вас на власні
-               проекти або допоможуть удосконалити те, що ви вже використовуєте.
+               <strong className='text-gray-800'>На цьому сайті</strong> ви знайдете цікаві розробки, створені автором. Можливо, вони надихнуть
+               вас на власні проекти або допоможуть удосконалити те, що ви вже використовуєте.
             </p>
-            <p>
-               Потрібна унікальна таблиця під ваші задачі?
-               <br />- залиште заявку, і я допоможу створити ефективне рішення для вас!
-            </p>
+            <p>Ви можете отримати консультації автора, чи замовити проект для реалізації своїх власних задач</p>
             <button
                className='rounded-lg border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-base py-2 px-4 w-auto m-auto ms-0 mt-1 font-medium'
                onClick={() => {}}

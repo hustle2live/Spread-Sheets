@@ -32,7 +32,19 @@ body {
    max-width: 1024px;
 }
 
-.card-view {
+.pdf-viewer {
+   .controls {
+      opacity: 0;
+      transition: opacity 250ms;
+   }
+
+   &:active .controls,
+   &:hover .controls {
+      opacity: 1;
+   }
+}
+
+.pdf-container {
    &::-webkit-scrollbar {
       width: 4px;
       height: 4px;
