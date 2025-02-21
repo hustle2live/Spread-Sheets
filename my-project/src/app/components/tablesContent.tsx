@@ -49,7 +49,7 @@ const TablesContent: React.FC = () => {
    });
 
    return (
-      <div className='container m-auto my-10 flex flex-wrap p-12 py-6 gap-0'>
+      <div className='container m-auto flex flex-wrap p-12 py-6 gap-0'>
          <div className='p-6 border-b border-dotted w-full my-4 relative'>
             <h4 className='my-2 font-semibold text-gray-900 text-2xl'>Популярні інструменти</h4>
             <Image

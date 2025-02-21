@@ -15,8 +15,9 @@ const TablesGrid: React.FC = () => {
 
    return (
       <div id='content' className='bg-transparent flex flex-col items-center text-center'>
-         <div className='container mt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 md:gap-16 md:px-24'>
-            <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
+         <h2>Приклади таблиць</h2>
+         <div className='container mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 md:gap-16 md:px-24'>
+            <div className='shadow-md bg-white rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
                <div className='card-view h-60 relative overflow-hidden'>
                   <PdfViewer url={PdfView1} />
                </div>
@@ -31,7 +32,7 @@ const TablesGrid: React.FC = () => {
                </div>
             </div>
 
-            <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
+            <div className='shadow-md bg-white rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
                <div className='card-view h-60 relative overflow-hidden'>
                   <PdfViewer url={PdfView2} />
                </div>
@@ -47,7 +48,7 @@ const TablesGrid: React.FC = () => {
                </div>
             </div>
 
-            <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
+            <div className='shadow-md bg-white rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
                <div className='card-view h-60 relative overflow-hidden'>
                   <PdfViewer url={PdfView3} />
                </div>
@@ -63,7 +64,7 @@ const TablesGrid: React.FC = () => {
                </div>
             </div>
 
-            <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
+            <div className='shadow-md bg-white rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
                <div className='card-view h-60 relative overflow-hidden'>
                   <PdfViewer url={PdfView4} />
                </div>
@@ -80,7 +81,7 @@ const TablesGrid: React.FC = () => {
                   </p>
                </div>
             </div>
-            <div className='rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
+            <div className='shadow-md bg-white rounded-md border border-neutral-200 transition-all hover:border-gray-400 text-start'>
                <div className='card-view h-60 relative overflow-hidden'>
                   <PdfViewer url={PdfView5} />
                </div>

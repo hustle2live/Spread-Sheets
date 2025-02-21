@@ -5,6 +5,9 @@
 :root {
    --background: #ffffff;
    --foreground: #171717;
+   --bg-primary: rgb(241, 245, 249);
+   --bg-secondary: rgb(229, 231, 235);
+   --primary-color: rgb(168, 85, 247);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -12,6 +15,22 @@
       --background: #0a0a0a;
       --foreground: #ededed;
    }
+}
+
+.text-primary {
+   color: var(--primary-color);
+}
+.bg-primary {
+   background: var(--primary-color);
+}
+
+.bg-body-primary {
+   background: var(--bg-primary);
+}
+
+.bg-body-primary-gradient {
+   background: var(--bg-primary);
+   background: linear-gradient(0deg, rgba(241, 245, 249, 1) 75%, rgba(255, 0, 0, 0) 100%);
 }
 
 html {
