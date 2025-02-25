@@ -5,12 +5,13 @@ const nextConfig: NextConfig = {
    trailingSlash: true,
    assetPrefix: './',
    skipTrailingSlashRedirect: true,
+   // skipMiddlewareUrlNormalize: true,
    images: {
       disableStaticImages: false,
       unoptimized: true
    },
    output: 'export',
-   basePath: process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_BASE_PATH : ''
+   basePath: process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_BASE_PATH ?? '' : ''
 };
 
 export default nextConfig;

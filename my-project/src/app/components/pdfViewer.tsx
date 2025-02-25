@@ -3,43 +3,48 @@
 import { ArrowsPointingOutIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import { BaseUrl } from './common/constants';
+
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 
-const baseUrl = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_BASE_PATH : '';
+const options = {
+   cMapUrl: '/cmaps/'
+};
 
-const worker = `${baseUrl}/pdf.worker.min.mjs`;
+const worker = `${BaseUrl}/pdf.worker.min.mjs`;
 
 pdfjs.GlobalWorkerOptions.workerSrc = worker;
 
-type TProps = { url: string };
+export type TProps = { url: string };
 
 const PdfViewer: React.FC<TProps> = ({ url }: TProps) => {
    const [numPages, setNumPages] = useState<number | null>(null);
    const [pageNumber, setPageNumber] = useState<number>(1);
-   const [scale, setScale] = useState<number>(1); // 🔥 Масштаб
-   const containerRef = useRef<HTMLDivElement>(null);
+   const [scale, setScale] = useState<number>(1);
    const [width, setWidth] = useState<number>(600);
 
+   const containerRef = useRef<HTMLDivElement>(null);
+
+   const goToNextPage = () => setPageNumber((prev) => Math.min(prev + 1, numPages ?? 1));
+   const goToPrevPage = () => setPageNumber((prev) => Math.max(prev - 1, 1));
+
+   const zoomIn = () => setScale((prev) => Math.min(prev + 0.2, 4));
+   const zoomOut = () => setScale((prev) => Math.max(prev - 0.2, 0.5));
+
    useEffect(() => {
-      function updateWidth() {
+      const updateWidth = () => {
          if (containerRef.current) {
             setWidth(containerRef.current.clientWidth);
          }
-      }
+      };
       updateWidth();
       window.addEventListener('resize', updateWidth);
       return () => window.removeEventListener('resize', updateWidth);
    }, []);
 
-   // 🔹 Функція зміни сторінки
-   const goToNextPage = () => setPageNumber((prev) => Math.min(prev + 1, numPages ?? 1));
-   const goToPrevPage = () => setPageNumber((prev) => Math.max(prev - 1, 1));
-
-   // 🔹 Функції зміни масштабу
-   const zoomIn = () => setScale((prev) => Math.min(prev + 0.2, 4));
-   const zoomOut = () => setScale((prev) => Math.max(prev - 0.2, 0.5));
+   console.log('imported url:' + url);
 
    return (
       <div className='pdf-viewer relative h-full w-full overflow-hidden text-xs'>
@@ -52,7 +57,7 @@ const PdfViewer: React.FC<TProps> = ({ url }: TProps) => {
                ⬅️
             </button>
             <span>
-               Сторінка {pageNumber} з {numPages || '?'}
+               Сторінка {pageNumber} з {numPages ?? '?'}
             </span>
             <button onClick={goToNextPage} disabled={pageNumber === numPages}>
                ➡️
@@ -64,7 +69,12 @@ const PdfViewer: React.FC<TProps> = ({ url }: TProps) => {
          </div>
 
          <div ref={containerRef} className='pdf-container absolute w-full h-full left-0 top-0 overflow-scroll'>
-            <Document className='pdf-document' file={url} onLoadSuccess={({ numPages }) => setNumPages(numPages)}>
+            <Document
+               options={options}
+               className='pdf-document'
+               file={url}
+               onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+            >
                <Page key={pageNumber} pageNumber={pageNumber} width={width * scale} />
             </Document>
          </div>

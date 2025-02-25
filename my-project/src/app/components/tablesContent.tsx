@@ -59,7 +59,7 @@ const TablesContent: React.FC = () => {
                alt='g-sheets vs excel'
                width={100}
                height={100}
-               objectFit='cover'
+               // objectFit='cover'
             ></Image>
          </div>
 
@@ -125,7 +125,7 @@ const TablesContent: React.FC = () => {
                   loader={imageLoader}
                   width={100}
                   height={100}
-                  objectFit='cover'
+                  // objectFit='cover'
                   className='w-full h-full'
                ></Image>
             </div>
@@ -136,7 +136,7 @@ const TablesContent: React.FC = () => {
                   src={Excel}
                   width={100}
                   height={100}
-                  objectFit='cover'
+                  // objectFit='cover'
                   className='w-full h-full'
                ></Image>
             </div>

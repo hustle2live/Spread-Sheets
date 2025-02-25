@@ -1,6 +1,5 @@
 import TablesContent from './tablesContent';
 import { TablesGrid } from './tablesGrid';
-// import { UserCircleIcon, LightBulbIcon } from '@heroicons/react/20/solid';
 
 const TableClasses: React.FC = () => {
    return (
@@ -54,8 +53,6 @@ const TableClasses: React.FC = () => {
             </ul>
 
             <div>
-               {/* <UserCircleIcon className='size-10 m-2 rounded-full border inline border-transparent text-blue-600 shadow-md' /> */}
-               {/* <LightBulbIcon className='size-12 p-2 m-2 rounded-full border inline border-transparent text-blue-400' /> */}
                <p className='py-4 text-lg inline-block'>
                   💡 Звичайно ж така класифікація досить умовна і є особистою думкою автора.
                </p>
@@ -76,6 +73,7 @@ const TableClasses: React.FC = () => {
 };
 
 const Content = () => {
+
    return (
       <div className='mb-32'>
          <div className='bg-body-primary pt-32 pb-1'>

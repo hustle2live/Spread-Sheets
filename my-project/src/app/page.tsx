@@ -10,6 +10,7 @@ import { Content } from './components/mainContent';
 
 export default function Home() {
    // const router = useRouter();
+   console.log('render');
 
    return (
       <div className='bg-white'>
