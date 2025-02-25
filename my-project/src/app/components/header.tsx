@@ -8,10 +8,11 @@ const Header: React.FC = () => {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
    const navigation = [
-      { name: 'menu', href: '#' },
-      { name: 'tables', href: '#' },
-      { name: 'item', href: '#' },
-      { name: 'contacts', href: '#' }
+      { name: 'page 1', href: '/accounting-system' },
+      { name: 'page 2', href: '/documents-formation' },
+      { name: 'page 3', href: '/public-accounting' },
+      { name: 'page 4', href: '/small-production' },
+      { name: 'page 5', href: '/group-cash-flow' }
    ];
 
    return (
@@ -21,7 +22,7 @@ const Header: React.FC = () => {
                <a href='#' className='-m-1.5 p-1.5'>
                   <span className='sr-only'>Your Company</span>
                   <img
-                     alt=''
+                     alt='icon mark'
                      src='https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600'
                      className='h-8 w-auto'
                   />

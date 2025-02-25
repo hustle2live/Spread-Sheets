@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
    trailingSlash: true,
    assetPrefix: './',
    skipTrailingSlashRedirect: true,
-   // skipMiddlewareUrlNormalize: true,
    images: {
       disableStaticImages: false,
       unoptimized: true
@@ -15,3 +14,5 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+// skipMiddlewareUrlNormalize: true,

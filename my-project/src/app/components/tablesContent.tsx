@@ -1,17 +1,19 @@
 'use client';
-
 import React, { useRef, useState, useEffect } from 'react';
-
 import Image from 'next/image';
-import { imageLoader } from '../components/imageLoader';
+import { imageLoader } from '@/components/imageLoader';
+
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 
 import tableIconsBoth from '@/assets/pictures/xls-vs-sheets.png';
 import Excel from '@/assets/pictures/MS-Excel-Masterclass-1.webp';
 import Sheets from '@/assets/pictures/google-sheets-tables.png';
 
-import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
+type TProp = {
+   showForm: () => void;
+};
 
-const TablesContent: React.FC = () => {
+const TablesContent: React.FC<TProp> = ({ showForm }: TProp) => {
    const [isVisible, setIsVisible] = useState(false);
    const scrollReference = useRef<HTMLDivElement | null>(null);
 
@@ -49,7 +51,7 @@ const TablesContent: React.FC = () => {
    });
 
    return (
-      <div className='container m-auto flex flex-wrap p-12 py-6 gap-0'>
+      <div className='container m-auto flex flex-wrap gap-0'>
          <div className='p-6 border-b border-dotted w-full my-4 relative'>
             <h4 className='my-2 font-semibold text-gray-900 text-2xl'>Популярні інструменти</h4>
             <Image
@@ -59,7 +61,6 @@ const TablesContent: React.FC = () => {
                alt='g-sheets vs excel'
                width={100}
                height={100}
-               // objectFit='cover'
             ></Image>
          </div>
 
@@ -111,7 +112,7 @@ const TablesContent: React.FC = () => {
             <p>Ви можете отримати консультації автора, чи замовити проект для реалізації своїх власних задач</p>
             <button
                className='rounded-lg border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-base py-2 px-4 w-auto m-auto ms-0 mt-1 font-medium'
-               onClick={() => {}}
+               onClick={showForm}
             >
                Отримати консультацію <ArrowUpRightIcon className='-ms-1 size-6' />
             </button>
@@ -125,7 +126,6 @@ const TablesContent: React.FC = () => {
                   loader={imageLoader}
                   width={100}
                   height={100}
-                  // objectFit='cover'
                   className='w-full h-full'
                ></Image>
             </div>
@@ -136,7 +136,6 @@ const TablesContent: React.FC = () => {
                   src={Excel}
                   width={100}
                   height={100}
-                  // objectFit='cover'
                   className='w-full h-full'
                ></Image>
             </div>

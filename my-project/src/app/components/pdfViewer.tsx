@@ -8,6 +8,7 @@ import { BaseUrl } from './common/constants';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
+import dynamic from 'next/dynamic';
 
 const options = {
    cMapUrl: '/cmaps/'
@@ -19,7 +20,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = worker;
 
 export type TProps = { url: string };
 
-const PdfViewer: React.FC<TProps> = ({ url }: TProps) => {
+const PdfViewerComponent: React.FC<TProps> = ({ url }: TProps) => {
    const [numPages, setNumPages] = useState<number | null>(null);
    const [pageNumber, setPageNumber] = useState<number>(1);
    const [scale, setScale] = useState<number>(1);
@@ -82,4 +83,6 @@ const PdfViewer: React.FC<TProps> = ({ url }: TProps) => {
    );
 };
 
-export default PdfViewer;
+export default PdfViewerComponent;
+
+export const PdfDynamicViewer = dynamic(() => import('@/components/pdfViewer'), { ssr: false });

@@ -1,9 +1,9 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import HTMLParser from 'html-react-parser';
-
 import { PageDir, PDFsDirPath } from '@/components/common/constants';
+
+import { PdfDynamicViewer as PdfViewer } from '@/components/pdfViewer';
 
 type DadaType = {
    header: string;
@@ -30,7 +30,6 @@ const data: DadaType = [
 ];
 
 const DocumentFormation: React.FC = () => {
-   const PdfViewer = dynamic(() => import('@/components/pdfViewer'), { ssr: false });
    const pdfPath = PDFsDirPath[PageDir.DOCUMENT_FORMATION];
 
    return (
@@ -45,7 +44,10 @@ const DocumentFormation: React.FC = () => {
             <div className='container grid grid-cols-1 gap-4 md:gap-16 md:px-24'>
                {data.map(({ header, text }, idx) => {
                   return (
-                     <div key={`key_${idx}_${header}`} className='h-auto px-6 lg:px-0 lg:h-96 flex flex-col lg:flex-row gap-3 rounded-md text-start'>
+                     <div
+                        key={`key_${idx}_${header}`}
+                        className='h-auto px-6 lg:px-0 lg:h-96 flex flex-col lg:flex-row gap-3 rounded-md text-start'
+                     >
                         <div className='w-full h-80 lg:h-auto lg:w-1/2 card-view relative overflow-hidden shadow-md bg-white'>
                            <PdfViewer url={pdfPath[idx] ?? ''} />
                         </div>

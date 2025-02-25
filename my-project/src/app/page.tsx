@@ -3,23 +3,24 @@
 import { Header } from './components/header';
 import { Hero } from './components/hero';
 
-// import { TablesGrid } from './components/tablesGrid';
 
 import { Footer } from './components/footer';
 import { Content } from './components/mainContent';
+import { PopupForm } from './components/popupForm';
+import { useState } from 'react';
 
 export default function Home() {
-   // const router = useRouter();
-   console.log('render');
+   const [show, setShow] = useState(false);
 
    return (
-      <div className='bg-white'>
+      <div className='bg-white relative'>
          <Header />
          <main id='main'>
             <Hero />
-            <Content />
+            <Content showForm={() => setShow(true)} />
          </main>
          <Footer />
+         <PopupForm show={show} onClose={() => setShow(false)} />
       </div>
    );
 }
