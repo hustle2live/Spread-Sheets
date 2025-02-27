@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import { PopupProvider } from '@/components/popup/popupContext';
 
@@ -20,6 +19,9 @@ export default function RootLayout({
    return (
       <PopupProvider>
          <html lang='uk'>
+            <head>
+               <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+            </head>
             <body>{children}</body>
          </html>
       </PopupProvider>

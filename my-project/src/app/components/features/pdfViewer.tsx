@@ -6,7 +6,7 @@ import { pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 import Link from 'next/link';
-// import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 const worker = `${BaseUrl}/pdf.worker.min.mjs`;
 
@@ -15,35 +15,32 @@ pdfjs.GlobalWorkerOptions.workerSrc = worker;
 export type TProps = { url: string };
 
 const PdfViewerComponent: React.FC<TProps> = ({ url }: TProps) => {
-   // const iframeRef = useRef<HTMLIFrameElement>(null);
+   const [origin, setOrigin] = useState('');
 
-   console.log('imported url:' + url);
-
-   // const addScrollBarStyle = () => {
-   //    if (!iframeRef.current) return;
-   //    iframeRef.current.classList.add('pdf-container');
-   // };
-
-   // useEffect(() => {
-   //    if (!iframeRef.current) return;
-   //    iframeRef.current.addEventListener('DOMContentLoaded', addScrollBarStyle);
-   //    return () => iframeRef.current?.removeEventListener('DOMContentLoaded', addScrollBarStyle);
-   // }, []);
+   useEffect(() => {
+      if (typeof window !== 'undefined') {
+         setOrigin(window.location.origin.concat(url));
+      }
+   }, []);
 
    return (
       <div className='pdf-viewer relative h-full w-full overflow-hidden text-xs'>
          <Link
-            href={url}
+            href={origin}
+            prefetch={false}
             target='_blank'
             className='controls absolute right-2 top-2 z-10 size-7 p-1 bg-gray-800 text-slate-50'
          >
             <ArrowsPointingOutIcon />
          </Link>
          <iframe
-            // ref={iframeRef}
-            allowFullScreen={true}
+            allowFullScreen
+            allow='fullscreen; clipboard-read; clipboard-write'
+            width='100%'
+            height='100%'
+            style={{ border: 'none' }}
             src={url}
-            title='pdf file'
+            title='pdf_file'
             className='pdf-container w-full h-full'
          />
       </div>

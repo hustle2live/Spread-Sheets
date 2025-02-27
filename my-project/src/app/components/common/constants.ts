@@ -9,11 +9,17 @@ enum PageDir {
    SMALL_PRODUCTION = 'small-production'
 }
 
-// const BaseUrl = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_BASE_PATH ?? '' : '';
-
 const BaseUrl = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 type PDFSType = Record<PageDir, string[]>;
+
+// [PageDir.HOMEPAGE]: [
+//    'https://drive.google.com/file/d/1Z1yB_-ndC78Pxx1FQkgjPgS6hWunVGuU/view',
+//    'https://drive.google.com/file/d/1Y2DE0BVThQW6jASOLB62sKbz5LMcGgxi/view',
+//    'https://drive.google.com/file/d/1KQN0qe0X3AOneVvR485Chu3MY-6EevG8/view',
+//    'https://drive.google.com/file/d/1gRZEpoCBkiYx-AL11r4_lb9u54IpXXHk/view',
+//    'https://drive.google.com/file/d/1mXS78DuYLbHd-6JCMIrDXFCSKhuD_b1z/view'
+// ],
 
 const PDFsDirPath: PDFSType = {
    [PageDir.HOMEPAGE]: [

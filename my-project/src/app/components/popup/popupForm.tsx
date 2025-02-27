@@ -5,6 +5,7 @@ import { imageLoader } from '@/components/features/imageLoader';
 import { XMarkIcon } from '@heroicons/react/20/solid';
 
 import { usePopup } from './popupContext';
+import Link from 'next/link';
 
 const PopupForm: React.FC = () => {
    const { show, setShow } = usePopup();
@@ -82,12 +83,12 @@ const PopupForm: React.FC = () => {
                </form>
 
                <p className='mt-8 text-sm/6 text-gray-300'>Написати на е-мейл: </p>
-               <a
+               <Link
                   className='block text-sm/4 font-medium text-indigo-300 hover:text-indigo-200 '
                   href='mailto:address@gmail.com'
                >
                   address@gmail.com
-               </a>
+               </Link>
             </div>
          </div>
       </div>

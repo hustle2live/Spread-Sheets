@@ -16,7 +16,7 @@ const TableClasses: React.FC = () => {
          </div>
 
          <div className='p-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8'>
-            <p className='w-4/6'>
+            <p className='md:w-4/6'>
                Маючи багаторічний досвід побудови різних за складністю задач можу класифікувати свої розробки таким
                чином:
             </p>
@@ -71,12 +71,12 @@ const Content: React.FC = () => {
             <h2 className='text-4xl text-center font-semibold tracking-tight text-balance text-gray-900'>
                Як використовувати електронні таблиці?
             </h2>
-            <p className='pb-32 text-center m-auto mt-4 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 w-1/2'>
+            <p className='pb-32 text-center m-auto mt-4 px-4 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 md:w-3/4 lg:w-1/2'>
                Цей сайт присвячено темі розробки корисних і ефективних методів/можливостей використання електронних
                таблиць у різних сферах діяльності
             </p>
          </div>
-         <div className='py-6 sm:px-6 md:px-12'>
+         <div className='p-0 sm:p-6 md:px-12'>
             <TablesContent />
             <TableClasses />
             <TablesGrid />
@@ -84,7 +84,7 @@ const Content: React.FC = () => {
          <div className='w-full px-6 py-12 pb-16 mb-32 bg-slate-100'>
             <div className='container m-auto'>
                <p className='my-4 font-semibold text-gray-900 text-2xl'>Електронна таблиця як база даних?</p>
-               <p className='text-lg w-4/6'>
+               <p className='text-lg w-full md:w-4/6'>
                   📌 Хоча справжня база даних має складнішу архітектуру, деякі таблиці виконують аналогічні функції.
                   Саме тому в рамках цього сайту можна зустріти термін{' '}
                   <q className='font-semibold text-gray-800'>БАЗА ДАНИХ</q>, навіть якщо це дещо спрощене визначення.
