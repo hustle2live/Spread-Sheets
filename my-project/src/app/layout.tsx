@@ -1,6 +1,11 @@
+
 import type { Metadata } from 'next';
+import { PopupProvider } from '@/components/popup/popupContext';
 
 import './globals.scss';
+
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
 
 export const metadata: Metadata = {
    title: 'Yuras SpreadSheets - Електронні Таблиці Юрія',
@@ -12,10 +17,11 @@ export default function RootLayout({
 }: Readonly<{
    children: React.ReactNode;
 }>) {
-
    return (
-      <html lang='uk'>
-         <body>{children}</body>
-      </html>
+      <PopupProvider>
+         <html lang='uk'>
+            <body>{children}</body>
+         </html>
+      </PopupProvider>
    );
 }

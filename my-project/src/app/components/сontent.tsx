@@ -1,9 +1,7 @@
+'use client';
+
 import TablesContent from './tablesContent';
 import { TablesGrid } from './tablesGrid';
-
-type TProp = {
-   showForm: () => void;
-};
 
 const TableClasses: React.FC = () => {
    return (
@@ -32,8 +30,8 @@ const TableClasses: React.FC = () => {
                </li>
                <li>
                   <p>
-                     📈 <strong className='text-gray-800'>Розрахункові таблиці</strong> – з простими і складними
-                     зв&apos;язками (багатосторінкові).
+                     📈 <strong className='text-gray-800'>Розрахункові таблиці</strong> – з простими і складними зв{`'`}
+                     язками (багатосторінкові).
                   </p>
                </li>
                <li>
@@ -61,24 +59,14 @@ const TableClasses: React.FC = () => {
                   💡 Звичайно ж така класифікація досить умовна і є особистою думкою автора.
                </p>
             </div>
-
-            {/* <p className='py-4 text-lg font-semibold text-pretty text-gray-900 sm:text-xl/8 my-4'>
-               Електронна таблиця як база даних?
-            </p>
-
-            <p className='text-lg w-4/6'>
-               📌 Хоча справжня база даних має складнішу архітектуру, деякі таблиці виконують аналогічні функції. Саме
-               тому в рамках цього сайту можна зустріти термін <q className='font-semibold text-gray-800'>БАЗА ДАНИХ</q>,
-               навіть якщо це дещо спрощене визначення.
-            </p> */}
          </div>
       </div>
    );
 };
 
-const Content: React.FC<TProp> = ({ showForm }: TProp) => {
+const Content: React.FC = () => {
    return (
-      <div className='mb-32'>
+      <div className=''>
          <div className='bg-body-primary pt-32 pb-1'>
             <h2 className='text-4xl text-center font-semibold tracking-tight text-balance text-gray-900'>
                Як використовувати електронні таблиці?
@@ -88,11 +76,13 @@ const Content: React.FC<TProp> = ({ showForm }: TProp) => {
                таблиць у різних сферах діяльності
             </p>
          </div>
-         <div className='container m-auto p-12 py-6'>
-            <TablesContent showForm={showForm} />
+         <div className='py-6 sm:px-6 md:px-12'>
+            <TablesContent />
             <TableClasses />
             <TablesGrid />
-            <div className='px-6 my-12'>
+         </div>
+         <div className='w-full px-6 py-12 pb-16 mb-32 bg-slate-100'>
+            <div className='container m-auto'>
                <p className='my-4 font-semibold text-gray-900 text-2xl'>Електронна таблиця як база даних?</p>
                <p className='text-lg w-4/6'>
                   📌 Хоча справжня база даних має складнішу архітектуру, деякі таблиці виконують аналогічні функції.

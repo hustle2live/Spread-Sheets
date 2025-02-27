@@ -1,3 +1,5 @@
+'use client';
+
 const FormElement: React.FC = () => {
    return (
       <form action='' className='flex flex-wrap bg-gray-100 space-y-4 p-4 w-2/5'>

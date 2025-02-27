@@ -1,35 +1,21 @@
 'use client';
 import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
-import { imageLoader } from '@/components/imageLoader';
+import { imageLoader } from '@/app/components/features/imageLoader';
 
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 
 import tableIconsBoth from '@/assets/pictures/xls-vs-sheets.png';
 import Excel from '@/assets/pictures/MS-Excel-Masterclass-1.webp';
 import Sheets from '@/assets/pictures/google-sheets-tables.png';
+import { usePopup } from './popup/popupContext';
 
-type TProp = {
-   showForm: () => void;
-};
-
-const TablesContent: React.FC<TProp> = ({ showForm }: TProp) => {
+const TablesContent: React.FC = () => {
    const [isVisible, setIsVisible] = useState(false);
+   const [duplicated, setDuplicated] = useState(false);
    const scrollReference = useRef<HTMLDivElement | null>(null);
 
-   const duplicateItems = async () => {
-      if (!scrollReference.current || !scrollReference.current?.firstChild) return;
-      try {
-         const scrollerInner = scrollReference.current.firstChild as HTMLUListElement;
-         const scrollerContent = Array.from(scrollerInner.children) as HTMLLIElement[];
-         scrollerContent.forEach((item) => {
-            if (!item) return;
-            const duplicatedItem = item.cloneNode(true) as HTMLLIElement;
-            duplicatedItem.setAttribute('aria-hidden', 'true');
-            scrollerInner.appendChild(duplicatedItem);
-         });
-      } catch {}
-   };
+   const { setShow } = usePopup();
 
    const handleScroll = () => {
       if (isVisible) {
@@ -42,6 +28,22 @@ const TablesContent: React.FC<TProp> = ({ showForm }: TProp) => {
       scrollReference.current.setAttribute('data-animated', 'true');
    };
 
+   const duplicateItems = async () => {
+      if (duplicated) return;
+      if (!scrollReference.current || !scrollReference.current?.firstChild) return;
+      try {
+         const scrollerInner = scrollReference.current.firstChild as HTMLUListElement;
+         const scrollerContent = Array.from(scrollerInner.children) as HTMLLIElement[];
+         scrollerContent.forEach((item) => {
+            if (!item) return;
+            const duplicatedItem = item.cloneNode(true) as HTMLLIElement;
+            duplicatedItem.setAttribute('aria-hidden', 'true');
+            scrollerInner.appendChild(duplicatedItem);
+         });
+         setDuplicated(true);
+      } catch {}
+   };
+
    useEffect(() => {
       duplicateItems();
       window.addEventListener('scroll', handleScroll);
@@ -51,11 +53,12 @@ const TablesContent: React.FC<TProp> = ({ showForm }: TProp) => {
    });
 
    return (
-      <div className='container m-auto flex flex-wrap gap-0'>
-         <div className='p-6 border-b border-dotted w-full my-4 relative'>
+      <div className='container m-auto flex flex-col lg:flex-row flex-wrap gap-0'>
+         {/* heading  */}
+         <div className='p-6 pb-0 sm:pb-6 border-b border-dotted w-full my-4 relative'>
             <h4 className='my-2 font-semibold text-gray-900 text-2xl'>Популярні інструменти</h4>
             <Image
-               className='w-32 h-auto absolute right-20 bottom-3'
+               className='w-20 sm:w-32 h-auto absolute right-0 top-4 sm:right-20 sm:top-auto sm:bottom-3'
                src={tableIconsBoth}
                loader={imageLoader}
                alt='g-sheets vs excel'
@@ -64,8 +67,10 @@ const TablesContent: React.FC<TProp> = ({ showForm }: TProp) => {
             ></Image>
          </div>
 
-         <div className='flex flex-col gap-6 p-6 description w-3/5 font-medium text-pretty text-gray-500 text-lg/6'>
-            <div ref={scrollReference} className='scroller w-full p-4 px-0 -ms-3 overflow-hidden'>
+         {/* content  */}
+         <div className='flex flex-col gap-6 p-6 pt-0 lg:pt-6 description w-full lg:w-3/5 font-medium text-pretty text-gray-500 text-lg/6'>
+            {/* text  */}
+            <div ref={scrollReference} className='scroller w-full p-4 px-0 -ms-3 overflow-hidden' data-animated='false'>
                <ul className='scroller__inner flex flex-nowrap gap-6 w-max'>
                   <li className='text-nowrap p-1 px-3 bg-opacity-20 rounded-full text-base bg-fuchsia-300 text-fuchsia-700 font-medium text-opacity-85 '>
                      Облік
@@ -105,6 +110,32 @@ const TablesContent: React.FC<TProp> = ({ showForm }: TProp) => {
                <strong className='text-gray-800'>Google Sheets</strong>.
                <br /> Вони допомагають у веденні розрахунків, аналізі даних і автоматизації процесів.
             </p>
+
+            {/* images */}
+            <div className='flex lg:hidden m-auto justify:center mb-3 w-5/6 sm:w-3/4 md:w-3/5 lg:w-2/5 position-relative lg:mt-20 lg:-ms-5'>
+               <div className='card w-1/2 h-auto sm:h-44 rounded-xl shadow-gray-200/50 shadow-lg border border-gray-200 overflow-hidden -rotate-6'>
+                  <Image
+                     alt='table'
+                     src={Sheets}
+                     loader={imageLoader}
+                     width={100}
+                     height={100}
+                     className='w-full h-full'
+                  ></Image>
+               </div>
+               <div className='card w-1/2 h-auto sm:h-44 rounded-xl shadow-gray-200/50  shadow-lg border border-gray-200 overflow-hidden -rotate-3 -ms-10 z-10'>
+                  <Image
+                     alt='table'
+                     loader={imageLoader}
+                     src={Excel}
+                     width={100}
+                     height={100}
+                     className='w-full h-full'
+                  ></Image>
+               </div>
+            </div>
+
+            {/* text  */}
             <p>
                <strong className='text-gray-800'>На цьому сайті</strong> ви знайдете цікаві розробки, створені автором.
                Можливо, вони надихнуть вас на власні проекти або допоможуть удосконалити те, що ви вже використовуєте.
@@ -112,13 +143,13 @@ const TablesContent: React.FC<TProp> = ({ showForm }: TProp) => {
             <p>Ви можете отримати консультації автора, чи замовити проект для реалізації своїх власних задач</p>
             <button
                className='rounded-lg border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-base py-2 px-4 w-auto m-auto ms-0 mt-1 font-medium'
-               onClick={showForm}
+               onClick={() => setShow(true)}
             >
                Отримати консультацію <ArrowUpRightIcon className='-ms-1 size-6' />
             </button>
          </div>
 
-         <div className='cards-group flex w-2/5 position-relative mt-20 -ms-5'>
+         <div className='hidden lg:flex w-2/5 position-relative mt-20 -ms-5'>
             <div className='card w-1/2 h-44 rounded-xl shadow-gray-200/50 shadow-lg border border-gray-200 overflow-hidden -rotate-6'>
                <Image
                   alt='table'

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 const Hero = () => {
@@ -23,10 +24,10 @@ const Hero = () => {
             <div className='hidden sm:mb-8 sm:flex sm:justify-center'>
                <div className='relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20'>
                   Announcing our next round of funding.{' '}
-                  <a href='#' className='font-semibold text-indigo-600'>
+                  <Link href='/public-accounting' className='font-semibold text-indigo-600'>
                      <span aria-hidden='true' className='absolute inset-0' />
                      Read more <span aria-hidden='true'>&rarr;</span>
-                  </a>
+                  </Link>
                </div>
             </div>
             <div className='text-center'>
@@ -49,7 +50,7 @@ const Hero = () => {
                      Розпочати
                   </button>
                   <a
-                     className='rounded-lg border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44'
+                     className='rounded-lg border border-solid border-black/[.8] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44'
                      href='#content'
                      rel='noopener noreferrer'
                   >

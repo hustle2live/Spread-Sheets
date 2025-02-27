@@ -1,22 +1,21 @@
 'use client';
 
 import Image from 'next/image';
-import { imageLoader } from './imageLoader';
-
+import { imageLoader } from '@/components/features/imageLoader';
 import { XMarkIcon } from '@heroicons/react/20/solid';
 
-type TProps = {
-   show: boolean;
-   onClose: () => void;
-};
+import { usePopup } from './popupContext';
 
-const PopupForm: React.FC<TProps> = ({ show, onClose }: TProps) => {
+const PopupForm: React.FC = () => {
+   const { show, setShow } = usePopup();
+
+   const isHidden = Boolean(!show);
+
    return (
-      <div hidden={!show} className='min-h-screen min-w-full fixed z-30 left-0 top-0'>
+      <div hidden={isHidden} className='min-h-screen min-w-full fixed z-30 left-0 top-0'>
          <div
-            // bg-gray-950  backdrop-blur-md
             className='overlay bg-opacity-20 min-w-full min-h-full h-full w-full absolute'
-            onClick={onClose}
+            onClick={() => setShow(false)}
          ></div>
 
          <div className='bg-violet-800 z-40 min-w-80 rounded-xl flex max-h-dvh h-auto flex-1 flex-col justify-center px-6 py-12 lg:px-8 absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2'>
@@ -32,7 +31,7 @@ const PopupForm: React.FC<TProps> = ({ show, onClose }: TProps) => {
                <h2 className='mt-4 text-center text-2xl font-bold tracking-tight'>Залиште заявку</h2>
             </div>
 
-            <button className='absolute -right-10 -top-10' title='Close' onClick={onClose}>
+            <button className='absolute -right-10 -top-10' title='Close' onClick={() => setShow(false)}>
                <XMarkIcon aria-hidden='true' className='size-6 text-blue-800 ' />
             </button>
 
@@ -40,7 +39,7 @@ const PopupForm: React.FC<TProps> = ({ show, onClose }: TProps) => {
                <form action='#' method='POST' className='space-y-4'>
                   <div>
                      <label htmlFor='name' className='block text-sm/6 font-medium text-gray-100'>
-                        Ваше Ім&apos;я
+                        Ваше Ім{`'`}я
                      </label>
                      <div className='mt-2'>
                         <input

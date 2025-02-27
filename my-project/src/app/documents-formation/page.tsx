@@ -3,7 +3,8 @@
 import HTMLParser from 'html-react-parser';
 import { PageDir, PDFsDirPath } from '@/components/common/constants';
 
-import { PdfDynamicViewer as PdfViewer } from '@/components/pdfViewer';
+// import { PdfDynamicViewer as PdfViewer } from '@/app/components/features/pdfViewerDynamic';
+import PdfViewer from '@/app/components/features/pdfViewer';
 
 type DadaType = {
    header: string;

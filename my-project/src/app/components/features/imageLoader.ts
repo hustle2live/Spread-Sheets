@@ -1,3 +1,5 @@
+'use client';
+
 import { ImageLoaderProps } from 'next/image';
 
 const imageLoader = (props: ImageLoaderProps) => {

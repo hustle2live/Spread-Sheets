@@ -1,26 +1,22 @@
 'use client';
 
-import { Header } from './components/header';
-import { Hero } from './components/hero';
+import { Header } from '@/components/header';
+import { Hero } from '@/components/hero';
 
-
-import { Footer } from './components/footer';
-import { Content } from './components/mainContent';
-import { PopupForm } from './components/popupForm';
-import { useState } from 'react';
+import { Footer } from '@/components/footer';
+import { Content } from '@/components/сontent';
+import { PopupForm } from '@/components/popup/popupForm';
 
 export default function Home() {
-   const [show, setShow] = useState(false);
-
    return (
       <div className='bg-white relative'>
          <Header />
          <main id='main'>
             <Hero />
-            <Content showForm={() => setShow(true)} />
+            <Content />
          </main>
          <Footer />
-         <PopupForm show={show} onClose={() => setShow(false)} />
+         <PopupForm />
       </div>
    );
 }

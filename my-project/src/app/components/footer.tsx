@@ -5,7 +5,7 @@ import FileSVG from '@/public/file.svg';
 import WindowSVG from '@/public/window.svg';
 import GlobeSVG from '@/public/globe.svg';
 
-import { imageLoader } from '@/components/imageLoader';
+import { imageLoader } from '@/app/components/features/imageLoader';
 
 const Footer: React.FC = () => {
    return (

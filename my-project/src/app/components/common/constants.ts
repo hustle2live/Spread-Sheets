@@ -1,3 +1,5 @@
+'use client';
+
 enum PageDir {
    HOMEPAGE = 'homepage',
    DOCUMENT_FORMATION = 'documents-formation',
