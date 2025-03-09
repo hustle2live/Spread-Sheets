@@ -100,3 +100,31 @@ body {
       transform: translate(calc(-50% - 0.5rem));
    }
 }
+
+.hero__content {
+   position: relative;
+   // background: #ebcece;
+   background: rgba(255, 255, 255, 0.75);
+   border-radius: 25% 25% / 50% 50%;
+
+   &::before {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 60%;
+      height: 60%;
+      --bg-color: rgb(233, 209, 209, 0.64);
+      --bg-color: rgba(218, 209, 233, 0.63);
+      right: -4%;
+      bottom: -12%;
+      background: var(--bg-color);
+      background: radial-gradient(circle, var(--bg-color) 0%, rgba(255, 255, 255, 0) 50%);
+   }
+
+   &_main > section,
+   &_main > p,
+   &_main > a,
+   &_main > div {
+      z-index: 1;
+   }
+}
