@@ -5,7 +5,7 @@ import { TablesGrid } from './tablesGrid';
 
 const TableClasses: React.FC = () => {
    return (
-      <div className='container m-auto flex flex-wrap gap-0 mt-20'>
+      <div className='container m-auto flex flex-wrap gap-0 mt-20 p-0 sm:p-6 md:px-12'>
          <div className='p-6 border-b border-dotted w-full mb-4'>
             <h3 className='my-2 font-semibold text-gray-900 text-2xl'>
                Категорії розробок.{' '}
@@ -66,7 +66,7 @@ const TableClasses: React.FC = () => {
 
 const Content: React.FC = () => {
    return (
-      <div className=''>
+      <div className='home__content'>
          <div className='bg-body-primary pt-32 pb-1'>
             <h2 className='text-4xl text-center font-semibold tracking-tight text-balance text-gray-900'>
                Як використовувати електронні таблиці?
@@ -76,11 +76,9 @@ const Content: React.FC = () => {
                таблиць у різних сферах діяльності
             </p>
          </div>
-         <div className='p-0 sm:p-6 md:px-12'>
-            <TablesContent />
-            <TableClasses />
-            <TablesGrid />
-         </div>
+         <TablesContent />
+         <TableClasses />
+         <TablesGrid />
          <div className='w-full px-6 py-12 pb-16 mb-32 bg-slate-100'>
             <div className='container m-auto'>
                <p className='my-4 font-semibold text-gray-900 text-2xl'>Електронна таблиця як база даних?</p>

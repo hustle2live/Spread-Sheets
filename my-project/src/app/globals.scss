@@ -52,18 +52,25 @@ body {
 }
 
 .pdf-viewer {
-   .controls {
-      opacity: 0;
-      transition: opacity 250ms;
-   }
-
    &:active .controls,
    &:hover .controls {
       opacity: 1;
    }
+   .controls {
+      opacity: 0;
+      transition: opacity 250ms;
+   }
 }
 
 .pdf-container {
+   &:hover::-webkit-scrollbar {
+      &-thumb {
+         background: #bebebe;
+      }
+      &-thumb:hover {
+         background: #555;
+      }
+   }
    &::-webkit-scrollbar {
       width: 4px;
       height: 4px;
@@ -73,15 +80,6 @@ body {
 
       &-thumb {
          background: transparent;
-      }
-   }
-
-   &:hover::-webkit-scrollbar {
-      &-thumb {
-         background: #bebebe;
-      }
-      &-thumb:hover {
-         background: #555;
       }
    }
 }
@@ -103,23 +101,8 @@ body {
 
 .hero__content {
    position: relative;
-   // background: #ebcece;
-   background: rgba(255, 255, 255, 0.75);
    border-radius: 25% 25% / 50% 50%;
-
-   &::before {
-      display: block;
-      position: absolute;
-      content: '';
-      width: 60%;
-      height: 60%;
-      --bg-color: rgb(233, 209, 209, 0.64);
-      --bg-color: rgba(218, 209, 233, 0.63);
-      right: -4%;
-      bottom: -12%;
-      background: var(--bg-color);
-      background: radial-gradient(circle, var(--bg-color) 0%, rgba(255, 255, 255, 0) 50%);
-   }
+   background: rgba(255, 255, 255, 0.75);
 
    &_main > section,
    &_main > p,
@@ -127,4 +110,35 @@ body {
    &_main > div {
       z-index: 1;
    }
+
+   &::before {
+      --bg-color: rgb(233, 209, 209, 0.64);
+      --bg-color: rgba(218, 209, 233, 0.63);
+      position: absolute;
+      right: 8%;
+      bottom: -8%;
+      display: block;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--bg-color) 0%, rgba(255, 255, 255, 0) 50%);
+      background: var(--bg-color);
+      content: '';
+   }
+}
+
+.home__content {
+}
+.home__tables-grid-list {
+}
+.home__tables-grid-list::before {
+   position: absolute;
+   z-index: 0;
+   z-index: -1;
+   bottom: 15%;
+   left: 45%;
+   display: block;
+   width: auto;
+   height: 50%;
+   // content: url('../assets/pictures/abstract/lines\(1\).png');
 }
