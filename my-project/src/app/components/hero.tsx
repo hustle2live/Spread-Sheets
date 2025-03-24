@@ -4,6 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { imageLoader } from './features/imageLoader';
+import FaceBookIco from '@/assets/icons/facebook-circle.png';
+import TelegramIco from '@/assets/icons/telegram-circle.png';
+
 import abstractLines from '@/assets/pictures/abstract/lines(2).png';
 
 const Hero = () => {
@@ -36,27 +39,52 @@ const Hero = () => {
          ></Image>
 
          <div className='content hero__content m-auto pb-5'>
-            <div className='hero__content_main text-center h-auto flex flex-col items-center gap-0'>
-               <section style={{ width: 'fit-content', zIndex: 3 }} className='flex justify-center py-8 '>
+            <div className='hero__content_main pt-32 sm:pt-16 text-center h-auto flex flex-col items-center gap-0'>
+               <section style={{ width: 'fit-content', zIndex: 3 }} className='hidden py-8 sm:flex justify-center '>
                   <div className='relative w-full rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20'>
-                     Announcing our next round of funding.{' '}
-                     <Link href='/public-accounting' className='font-semibold text-indigo-600'>
-                        <span aria-hidden='true' className='absolute inset-0' />
-                        Read more <span aria-hidden='true'>&rarr;</span>
+                     Зв{'`'}язатися з автором через соц.мережі{' '}
+                     <Link
+                        href='https://www.facebook.com/by0710'
+                        target='_blank'
+                        className='font-semibold text-indigo-600'
+                     >
+                        <Image
+                           style={{ display: 'inline-block' }}
+                           alt='facebook'
+                           loader={imageLoader}
+                           src={FaceBookIco}
+                           width={18}
+                           height={18}
+                        />
+                     </Link>
+                     <span aria-hidden='true'> | </span>
+                     <Link
+                        href='https://www.facebook.com/by0710'
+                        target='_blank'
+                        className='font-semibold text-indigo-600'
+                     >
+                        <Image
+                           style={{ display: 'inline-block' }}
+                           alt='facebook'
+                           loader={imageLoader}
+                           src={TelegramIco}
+                           width={18}
+                           height={18}
+                        />
                      </Link>
                   </div>
                </section>
 
                <h1
                   style={{ width: 'fit-content', zIndex: 3 }}
-                  className='text-5xl py-5 font-bold tracking-tight text-balance text-gray-900 sm:text-7xl'
+                  className='text-3xl sm:text-5xl md:text-7xl py-5 font-bold tracking-tight text-balance text-gray-900'
                >
                   Розкрийте секрети електронних таблиць
                </h1>
 
                <p
                   style={{ borderTop: 'none', width: 'fit-content' }}
-                  className='py-5 px-5 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8'
+                  className='py-5 sm:px-5 sm:text-lg font-medium text-pretty text-gray-500 md:text-xl/8'
                >
                   Електронні таблиці - ваш інструмент для{' '}
                   <strong className='text-gray-900'> аналізу та обліку даних</strong>.

@@ -20,6 +20,7 @@
 .text-primary {
    color: var(--primary-color);
 }
+
 .bg-primary {
    background: var(--primary-color);
 }
@@ -125,20 +126,4 @@ body {
       background: var(--bg-color);
       content: '';
    }
-}
-
-.home__content {
-}
-.home__tables-grid-list {
-}
-.home__tables-grid-list::before {
-   position: absolute;
-   z-index: 0;
-   z-index: -1;
-   bottom: 15%;
-   left: 45%;
-   display: block;
-   width: auto;
-   height: 50%;
-   // content: url('../assets/pictures/abstract/lines\(1\).png');
 }

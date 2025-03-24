@@ -45,7 +45,7 @@ const TablesGrid: React.FC = () => {
          id='content'
          className='home__tables-grid container m-auto bg-transparent flex flex-col items-center p-4 lg:p-6 pb-20 mt-20 sm:p-6 md:px-12'
       >
-         <h2 className='my-4 font-semibold text-gray-900 text-2xl ps-6'>Приклади таблиць</h2>
+         <h2 className='my-4 font-semibold text-gray-900 text-2xl text-center sm:text-start'>Приклади таблиць</h2>
          <div className='container home__tables-grid-list mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-16 lg:px-24 z-0 pb-12 relative'>
             {tablesData.map((item, idx) => {
                return (

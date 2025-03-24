@@ -54,8 +54,10 @@ const TablesContent: React.FC = () => {
 
    return (
       <div className='container m-auto flex flex-col lg:flex-row flex-wrap gap-0 p-0 sm:p-6 md:px-12'>
-         <div className='p-6 pb-0 sm:pb-6 border-b border-dotted w-full my-4 relative'>
-            <h4 className='my-2 font-semibold text-gray-900 text-2xl'>Популярні інструменти</h4>
+         <div className='pt-14 sm:p-6 pb-0 sm:pb-6 sm:my-4 border-b border-dotted w-full  relative'>
+            <h4 className='mb-4 sm:mb-2 my-2 font-semibold text-gray-900 text-2xl text-center sm:text-start'>
+               Популярні інструменти
+            </h4>
             <Image
                className='w-20 sm:w-32 h-auto absolute right-0 top-4 sm:right-20 sm:top-auto sm:bottom-3'
                src={tableIconsBoth}
@@ -66,9 +68,7 @@ const TablesContent: React.FC = () => {
             ></Image>
          </div>
 
-         {/* content  */}
          <div className='flex flex-col gap-6 p-6 pt-0 lg:pt-6 description w-full lg:w-3/5 font-medium text-pretty text-gray-500 text-lg/6'>
-            {/* text  */}
             <div ref={scrollReference} className='scroller w-full p-4 px-0 -ms-3 overflow-hidden' data-animated='false'>
                <ul className='scroller__inner flex flex-nowrap gap-6 w-max'>
                   <li className='text-nowrap p-1 px-3 bg-opacity-20 rounded-full text-base bg-fuchsia-300 text-fuchsia-700 font-medium text-opacity-85 '>
