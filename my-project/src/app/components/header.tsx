@@ -5,15 +5,24 @@ import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
+import FaceBookIco from '@/assets/icons/facebook-circle.png';
+import TelegramIco from '@/assets/icons/telegram-circle.png';
+import Image from 'next/image';
+import { imageLoader } from './features/imageLoader';
+
+import { usePopup } from './popup/popupContext';
+
 const Header: React.FC = () => {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+   const { setShow } = usePopup();
+
    const navigation = [
-      { name: 'page 1', href: '/accounting-system' },
-      { name: 'page 2', href: '/documents-formation' },
-      { name: 'page 3', href: '/public-accounting' },
-      { name: 'page 4', href: '/small-production' },
-      { name: 'page 5', href: '/group-cash-flow' }
+      { name: 'Бухгалтерський облік', href: '/accounting-system' },
+      { name: 'Формування документів', href: '/documents-formation' },
+      { name: 'Облік громадських організацій', href: '/public-accounting' },
+      { name: 'Мале виробництво', href: '/small-production' },
+      { name: 'Облік руху грошових коштів групи', href: '/group-cash-flow' }
    ];
 
    return (
@@ -47,9 +56,9 @@ const Header: React.FC = () => {
                ))}
             </div>
             <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-               <Link href='#' className='text-sm/6 font-semibold text-gray-900'>
+               {/* <Link href='#' className='text-sm/6 font-semibold text-gray-900'>
                   Log in <span aria-hidden='true'>&rarr;</span>
-               </Link>
+               </Link> */}
             </div>
          </nav>
          <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className='lg:hidden'>
@@ -73,7 +82,10 @@ const Header: React.FC = () => {
                      <XMarkIcon aria-hidden='true' className='size-6' />
                   </button>
                </div>
+
                <div className='mt-6 flow-root'>
+                  {/* <p>Сторінки:</p> */}
+                  <hr />
                   <div className='-my-6 divide-y divide-gray-500/10'>
                      <div className='space-y-2 py-6'>
                         {navigation.map((item) => (
@@ -86,13 +98,61 @@ const Header: React.FC = () => {
                            </Link>
                         ))}
                      </div>
-                     <div className='py-6'>
-                        <Link
-                           href='#'
-                           className='-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
-                        >
-                           Log in
-                        </Link>
+
+                     <div className='flex flex-col gap-2 py-6'>
+                        <p className='font-bold text-lg'> Контакти: </p>
+                        <div className='pb-2'>
+                           <button
+                              onClick={() => {
+                                 setMobileMenuOpen(false);
+                                 setShow(true);
+                              }}
+                              className='p-2 px-4 text-md text-sm rounded-lg text-white bg-indigo-600 hover:bg-indigo-400'
+                           >
+                              Залишити заявку
+                           </button>
+                        </div>
+
+                        <div className='flex gap-3'>
+                           <p>Email:</p>
+                           <Link href='mailto:yuras0720@gmail.com' className=' text-indigo-400 hover:text-indigo-600'>
+                              yuras0720@gmail.com
+                           </Link>
+                        </div>
+
+                        <div className='flex gap-3'>
+                           <p>Соц.мережі: </p>
+                           <div className='social-links flex gap-2'>
+                              <Link
+                                 href='https://www.facebook.com/by0710'
+                                 target='_blank'
+                                 className='font-semibold text-indigo-600'
+                              >
+                                 <Image
+                                    style={{ display: 'inline-block' }}
+                                    alt='facebook'
+                                    loader={imageLoader}
+                                    src={FaceBookIco}
+                                    width={24}
+                                    height={24}
+                                 />
+                              </Link>
+                              <Link
+                                 href='http://t.me/YesForSheets'
+                                 target='_blank'
+                                 className='font-semibold text-indigo-600'
+                              >
+                                 <Image
+                                    style={{ display: 'inline-block' }}
+                                    alt='facebook'
+                                    loader={imageLoader}
+                                    src={TelegramIco}
+                                    width={24}
+                                    height={24}
+                                 />
+                              </Link>
+                           </div>
+                        </div>
                      </div>
                   </div>
                </div>

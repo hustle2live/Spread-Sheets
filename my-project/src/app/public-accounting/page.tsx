@@ -64,11 +64,11 @@ const PublicAccounting: React.FC = () => {
 
    return (
       <div className='pb-32 bg-body-primary'>
-         <div className='py-32'>
-            <h2 className='w-full md:w-2/3 xl:w-1/2 m-auto text-4xl/normal text-center font-semibold text-balance leading-[50px] tracking-wide text-transparent bg-clip-text bg-gradient-to-l from-pink-400 to-blue-600'>
+         <div className='py-24 pb-16 sm:py-32 px-2'>
+            <h2 className='w-full md:w-2/3 xl:w-1/2 m-auto text-3xl sm:text-4xl/normal text-center font-semibold text-balance tracking-wide text-transparent bg-clip-text bg-gradient-to-l from-pink-400 to-blue-600'>
                Облік Громадських Організацій
             </h2>
-            <p className='text-center m-auto mt-4 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 w-1/2'>
+            <p className='text-center m-auto mt-4 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 lg:w-1/2'>
                У даному розділі я покажу як побудувати систему для обліку даних громадської організації (на прикладі
                гаражного кооперативу). Це особливо актуально на фоні росту громадських формувань, клубів та інших об
                {`'`}єднань громадян. В таких організаціях на перший план виходить облік членських внесків та інших
@@ -80,11 +80,11 @@ const PublicAccounting: React.FC = () => {
          <div className='container mx-auto'>
             <div className='bg-transparent flex flex-col items-center text-center pb-16'>
                <div className='container grid grid-cols-1 gap-4 md:gap-16 md:px-24'>
-                  <div className='h-auto px-6 lg:px-0 lg:h-96 flex flex-col lg:flex-row gap-3 rounded-md text-start'>
+                  <div className='h-auto px-4 lg:px-0 lg:h-96 flex flex-col lg:flex-row gap-3 rounded-md text-start'>
                      <div className='w-full h-80 lg:h-auto lg:w-1/2 card-view relative overflow-hidden shadow-md bg-white'>
                         <PdfViewer url={pdfPath[0]} />
                      </div>
-                     <div className='w-full px-2 py-4 mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
+                     <div className='w-full py-4 mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
                         <p className='mb-2 text-gray-900 text-lg/6 font-semibold '>{HTMLParser(data[0].header)}</p>
                         <p className='text-sm text-gray-700 font-thin'>{HTMLParser(data[0].text)}</p>
                      </div>
@@ -94,26 +94,27 @@ const PublicAccounting: React.FC = () => {
 
             <hr className='w-full my-4' />
 
-            <div className='content m-auto my-12 '>
+            <div className='content m-auto my-12 px-4'>
                <p className='mb-2'>Наступні три таблички присвячені нарахуванням:</p>
-               <ul className='text-center list-disc inline-flex gap-8 ps-4 flex-wrap'>
+               <ul className='sm:text-center list-disc inline-flex sm:gap-x-8 md:gap-8 ps-4 flex-wrap'>
                   <li className='list-disc'>нарахування членських внесків;</li>
-
                   <li className='list-disc'>нарахування внесків за електроенергію;</li>
-
                   <li className='list-disc'>нарахування по інших організаціях;</li>
                </ul>
             </div>
 
             <div className='bg-transparent flex flex-col items-center text-center pb-16'>
-               <div className='container grid grid-cols-3 gap-4 md:gap-16 md:px-24'>
+               <div className='container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 px-2 sm:px-4 sm:gap-3 md:gap-10 lg:gap-16 md:px-24'>
                   {data.slice(1, 4).map(({ header, text }, idx) => {
                      return (
-                        <div key={`key_${idx}_${header}`} className='h-auto px-6 flex-col gap-3 rounded-md text-start'>
+                        <div
+                           key={`key_${idx}_${header}`}
+                           className='h-auto px-2 md:px-6 flex-col gap-3 rounded-md text-start'
+                        >
                            <div className='w-full h-80 card-view relative overflow-hidden shadow-md bg-white'>
                               <PdfViewer url={pdfPath[idx + 1]} />
                            </div>
-                           <div className='w-full px-2 py-4 mb-8 lg:px-6 lg:py-0'>
+                           <div className='w-full py-4 mb-8 lg:px-6 lg:py-0'>
                               <p className='mb-2 text-gray-900 text-lg/6 font-semibold '>{HTMLParser(header)}</p>
                               <p className='text-sm text-gray-700 font-thin'>{HTMLParser(text)}</p>
                            </div>
@@ -131,12 +132,12 @@ const PublicAccounting: React.FC = () => {
                      return (
                         <div
                            key={`key_${idx}_${header}`}
-                           className='h-auto px-6 lg:px-0 lg:h-96 flex flex-col lg:flex-row gap-3 rounded-md text-start'
+                           className='h-auto px-4 lg:px-0 lg:h-96 flex flex-col lg:flex-row gap-3 rounded-md text-start'
                         >
                            <div className='w-full h-80 lg:h-auto lg:w-1/2 card-view relative overflow-hidden shadow-md bg-white'>
                               <PdfViewer url={pdfPath[idx + 4]} />
                            </div>
-                           <div className='w-full px-2 py-4 mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
+                           <div className='w-full py-4 mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
                               <p className='mb-2 text-gray-900 text-lg/6 font-semibold '>{HTMLParser(header)}</p>
                               <p className='text-sm text-gray-700 font-thin'>{HTMLParser(text)}</p>
                            </div>
@@ -147,7 +148,7 @@ const PublicAccounting: React.FC = () => {
 
                <hr className='w-full my-16 mt-20' />
 
-               <ul className='text-start w-4/5 gap-4 flex flex-col'>
+               <ul className='text-start px-4 md:w-4/5 gap-4 flex flex-col'>
                   <p className='text-lg'>
                      Створивши такий набір таблиць та налагодивши їх зв{`'`}язки, Ви отримуєте можливість побудувати
                      зручну і зрозумілу для себе систему обліку.
@@ -157,8 +158,8 @@ const PublicAccounting: React.FC = () => {
                      із своєї практики:
                   </p>
                   <li>
-                     - якщо маєте великий об{`'`}єм номенклатури (товарів, МШП і т.і.) то його доцільно вести окремо, а у
-                     дану систему вводити лише синтетичні дані;
+                     - якщо маєте великий об{`'`}єм номенклатури (товарів, МШП і т.і.) то його доцільно вести окремо, а
+                     у дану систему вводити лише синтетичні дані;
                   </li>
                   <li>- також аналітичні дані по зарплаті радив би вести окремо;</li>
                   <li>

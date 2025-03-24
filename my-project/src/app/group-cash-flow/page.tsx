@@ -1,6 +1,5 @@
 'use client';
 
-// import { PdfDynamicViewer as PdfViewer } from '@/app/components/features/pdfViewerDynamic';
 import PdfViewer from '@/app/components/features/pdfViewer';
 
 
@@ -50,26 +49,26 @@ const GroupCashFlow: React.FC = () => {
 
    return (
       <div className='pb-32 bg-body-primary'>
-         <div className='py-32'>
-            <h2 className='w-full md:w-2/3 xl:w-1/2 m-auto text-4xl/normal text-center font-semibold text-balance leading-[50px] tracking-wide text-transparent bg-clip-text bg-gradient-to-l from-pink-400 to-blue-600'>
+         <div className='py-24 pb-16 sm:py-32 px-2'>
+            <h2 className='w-full md:w-2/3 xl:w-1/2 m-auto text-3xl sm:text-4xl/normal text-center font-semibold text-balance tracking-wide text-transparent bg-clip-text bg-gradient-to-l from-pink-400 to-blue-600'>
                Облік руху грошових коштів групи
             </h2>
             <p className='text-center m-auto mt-4 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 w-1/2'></p>
          </div>
 
          <div className='container mx-auto'>
-            <div className='bg-transparent flex flex-col text-center pb-16'>
+            <div className='bg-transparent flex flex-col text-center lg:pb-10'>
                {data.map(({ header, text }, idx) => {
                   return (
                      <>
                         <div
                            key={header + idx}
-                           className='w-full h-auto px-6 lg:px-0 lg:h-96 justify-center flex flex-col lg:flex-row gap-3 rounded-md text-start mb-10'
+                           className='w-full h-auto px-2 lg:px-0 lg:h-96 justify-center flex flex-col lg:flex-row gap-3 rounded-md text-start mb-10'
                         >
                            <div className='w-full h-80 lg:h-auto lg:w-6/12 card-view relative overflow-hidden shadow-md bg-white'>
                               <PdfViewer url={pdfPath[idx]} />
                            </div>
-                           <div className='w-full px-2 py-4 mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
+                           <div className='w-full py-4 mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
                               <p className='mb-2 text-gray-900 text-lg/6 font-semibold '>{HTMLParser(header)}</p>
                               <p className='text-sm text-gray-700 font-thin'>{HTMLParser(text)}</p>
                            </div>
@@ -77,7 +76,7 @@ const GroupCashFlow: React.FC = () => {
                         {idx === 1 && (
                            <div className='my-16'>
                               <hr className='w-full' />
-                              <h4 className='mt-10 text-start text-xl font-semibold lg:ps-14'>
+                              <h4 className='px-2 mt-10 text-start text-xl font-semibold lg:ps-14'>
                                  Звіти по суб{`'`}єктам підприємництва, що входять до складу групи.
                               </h4>
                            </div>
@@ -86,7 +85,7 @@ const GroupCashFlow: React.FC = () => {
                   );
                })}
             </div>
-            <p>
+            <p className='px-2'>
                Завершуючи свою розповідь хочу зауважити, що наповнювати базу даних операцій може практично довільна
                кількість працівників. Причому їм зовсім немає потреби працювати в одній таблиці, як Вам мабуть здалося.
                Кожний користувач може мати індивідуальний файл, щоб не заважати один одному. А тим часом, загальна база

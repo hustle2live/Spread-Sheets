@@ -1,6 +1,6 @@
 'use client';
 
-import TablesContent from './tablesContent';
+import { Instruments } from './Instruments';
 import { TablesGrid } from './tablesGrid';
 
 const TableClasses: React.FC = () => {
@@ -15,7 +15,7 @@ const TableClasses: React.FC = () => {
             </h3>
          </div>
 
-         <div className='p-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8'>
+         <div className='p-6 px-4 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8'>
             <p className='md:w-4/6'>
                Маючи багаторічний досвід побудови різних за складністю задач можу класифікувати свої розробки таким
                чином:
@@ -76,10 +76,10 @@ const Content: React.FC = () => {
                таблиць у різних сферах діяльності
             </p>
          </div>
-         <TablesContent />
+         <Instruments />
          <TableClasses />
          <TablesGrid />
-         <div className='w-full text-center sm:text-start px-2 sm:px-6 md:ps-12 lg:ps-44 py-12 pb-16 mb-32 bg-slate-100'>
+         <div className='w-full text-center sm:text-start px-4 sm:px-6 md:ps-12 lg:ps-44 py-12 pb-16 mb-32 bg-slate-100'>
             <div className='container m-auto'>
                <p className='my-4 font-semibold text-gray-900 text-2xl'>Електронна таблиця як база даних?</p>
                <p className='text-lg w-full md:w-4/6 text-start'>

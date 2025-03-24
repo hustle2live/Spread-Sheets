@@ -34,11 +34,10 @@ const DocumentFormation: React.FC = () => {
 
    return (
       <div className='pb-32 bg-body-primary'>
-         <div className='py-32'>
-            <h2 className='w-full md:w-2/3 xl:w-1/2 m-auto text-4xl/normal text-center font-semibold text-balance leading-[50px] tracking-wide text-transparent bg-clip-text bg-gradient-to-l from-pink-400 to-blue-600'>
+         <div className='py-24 pb-16 sm:py-32 px-2'>
+            <h2 className='w-full md:w-2/3 xl:w-1/2 m-auto text-3xl sm:text-4xl/normal text-center font-semibold text-balance tracking-wide text-transparent bg-clip-text bg-gradient-to-l from-pink-400 to-blue-600'>
                Формування текстових документів засобами електронних таблиць
             </h2>
-            {/* <p className='text-center m-auto mt-4 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 w-1/2'></p> */}
          </div>
          <div className='bg-transparent flex flex-col items-center text-center pb-16'>
             <div className='container grid grid-cols-1 gap-4 md:gap-16 md:px-24'>
@@ -46,12 +45,12 @@ const DocumentFormation: React.FC = () => {
                   return (
                      <div
                         key={`key_${idx}_${header}`}
-                        className='h-auto px-6 lg:px-0 lg:h-96 flex flex-col lg:flex-row gap-3 rounded-md text-start'
+                        className='h-auto px-2 lg:px-0 lg:h-96 flex flex-col lg:flex-row gap-3 rounded-md text-start'
                      >
                         <div className='w-full h-80 lg:h-auto lg:w-1/2 card-view relative overflow-hidden shadow-md bg-white'>
                            <PdfViewer url={pdfPath[idx] ?? ''} />
                         </div>
-                        <div className='w-full px-2 py-4 mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
+                        <div className='w-full py-4 mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
                            <p className='mb-2 text-gray-900 text-lg/6 font-semibold '>{HTMLParser(header)}</p>
                            <p className='text-sm text-gray-700 font-thin'>{HTMLParser(text)}</p>
                         </div>

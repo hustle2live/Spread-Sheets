@@ -11,9 +11,7 @@ const PopupContext = createContext<PopupContextType | null>(null);
 
 export const PopupProvider = ({ children }: { children: ReactNode }) => {
    const [show, setShow] = useState(false);
-
    const popupValue = useMemo(() => ({ show, setShow }), [show, setShow]);
-
    return <PopupContext.Provider value={popupValue}>{children}</PopupContext.Provider>;
 };
 

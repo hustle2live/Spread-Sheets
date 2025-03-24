@@ -48,8 +48,8 @@ const SmallProduction: React.FC = () => {
 
    return (
       <div className='pb-32 bg-body-primary'>
-         <div className='py-32'>
-            <h2 className='w-full md:w-2/3 xl:w-1/2 m-auto text-4xl/normal text-center font-semibold text-balance leading-[50px] tracking-wide text-transparent bg-clip-text bg-gradient-to-l from-pink-400 to-blue-600'>
+         <div className='py-24 pb-16 sm:py-32 px-2'>
+            <h2 className='w-full md:w-2/3 xl:w-1/2 m-auto text-3xl sm:text-4xl/normal text-center font-semibold text-balance tracking-wide text-transparent bg-clip-text bg-gradient-to-l from-pink-400 to-blue-600'>
                Мале виробництво
             </h2>
             <p className='text-center m-auto mt-4 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 w-1/2'></p>
@@ -57,11 +57,11 @@ const SmallProduction: React.FC = () => {
 
          <div className='container mx-auto'>
             <div className='bg-transparent flex flex-col text-center pb-16'>
-               <div className='w-full h-auto px-6 lg:px-0 lg:h-96 justify-center flex flex-col lg:flex-row gap-3 rounded-md text-start'>
+               <div className='w-full h-auto px-2 lg:px-0 lg:h-96 justify-center flex flex-col lg:flex-row gap-3 rounded-md text-start'>
                   <div className='w-full h-80 lg:h-auto lg:w-6/12 card-view relative overflow-hidden shadow-md bg-white'>
                      <PdfViewer url={pdfPath[0]} />
                   </div>
-                  <div className='w-full px-2 py-4 mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
+                  <div className='w-full py-4 mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
                      <p className='mb-2 text-gray-900 text-lg/6 font-semibold '>{HTMLParser(data[0].header)}</p>
                      <p className='text-sm text-gray-700 font-thin'>{HTMLParser(data[0].text)}</p>
                   </div>
@@ -70,11 +70,11 @@ const SmallProduction: React.FC = () => {
                <br />
                <br />
 
-               <div className='w-full h-auto px-6 lg:px-0 lg:h-96 justify-center flex flex-col lg:flex-row gap-3 rounded-md text-start'>
+               <div className='w-full h-auto px-2 lg:px-0 lg:h-96 justify-center flex flex-col lg:flex-row gap-3 rounded-md text-start'>
                   <div className='w-full h-80 lg:h-auto lg:w-6/12 card-view relative overflow-hidden shadow-md bg-white'>
                      <PdfViewer url={pdfPath[1]} />
                   </div>
-                  <div className='w-full px-2 py-4 mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
+                  <div className='w-full py-4 sm:mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
                      <p className='mb-2 text-gray-900 text-lg/6 font-semibold '>{HTMLParser(data[1].header)}</p>
                      <p className='text-sm text-gray-700 font-thin'>{HTMLParser(data[1].text)}</p>
                   </div>
@@ -83,7 +83,7 @@ const SmallProduction: React.FC = () => {
 
             <hr className='w-full my-4' />
 
-            <h4 className='mt-8 mb-20'>Звіти про рух матеріальних цінностей та грошей</h4>
+            <h4 className='mt-8 mb-20 px-2 text-lg font-bold'>Звіти про рух матеріальних цінностей та грошей</h4>
 
             <div className='bg-transparent flex flex-col pb-16'>
                <div className='grid grid-cols-1 gap-4 md:gap-16 md:px-24'>
@@ -93,30 +93,30 @@ const SmallProduction: React.FC = () => {
                      const isLastElement = idx === arr.length - 1 ? 'flex-wrap' : '';
 
                      return isLastElement ? (
-                        <div key={`key_${idx}_${header}`}>
-                           <div className='h-auto flex m-auto justify-between gap-6 rounded-md'>
-                              <div className='w-1/2 h-80 card-view relative overflow-hidden shadow-md bg-white'>
+                        <div key={`key_${idx}_${header}`} className='sm:px-6'>
+                           <div className='px-2 h-auto flex flex-wrap sm:flex-nowrap m-auto justify-between gap-6 rounded-md'>
+                              <div className='w-full sm:w-1/2 h-80 card-view relative overflow-hidden shadow-md bg-white'>
                                  <PdfViewer url={pdfPath[prev] ?? ''} />
                               </div>
 
-                              <div className='w-1/2 px-2 py-4 mb-8 lg:py-0'>
+                              <div className='w-full sm:w-1/2 mb-8 lg:py-0'>
                                  <p className='mb-2 text-gray-900 text-lg/6 font-semibold '>{HTMLParser(header)}</p>
                                  <p className='text-sm text-gray-700 font-thin'>{HTMLParser(text)}</p>
                               </div>
                            </div>
                         </div>
                      ) : (
-                        <div key={`key_${idx}_${header}`}>
+                        <div key={`key_${idx}_${header}`} className='sm:px-6'>
                            <div className='w-full px-2 py-4 mb-8 lg:py-0'>
-                              <p className='mb-2 text-gray-900 text-lg/6 font-semibold '>{HTMLParser(header)}</p>
+                              <p className='mb-2 text-gray-900 text-lg/6 font-semibold'>{HTMLParser(header)}</p>
                               <p className='text-sm text-gray-700 font-thin'>{HTMLParser(text)}</p>
                            </div>
 
-                           <div className='h-auto flex m-auto justify-between gap-6 rounded-md'>
-                              <div className='w-1/2 h-80 card-view relative overflow-hidden shadow-md bg-white'>
+                           <div className='px-2 h-auto flex flex-wrap sm:flex-nowrap m-auto justify-between gap-6 rounded-md'>
+                              <div className='w-full sm:w-1/2 h-80 card-view relative overflow-hidden shadow-md bg-white'>
                                  <PdfViewer url={pdfPath[prev] ?? ''} />
                               </div>
-                              <div className='w-1/2 h-80 card-view relative overflow-hidden shadow-md bg-white'>
+                              <div className='w-full sm:w-1/2 h-80 card-view relative overflow-hidden shadow-md bg-white'>
                                  <PdfViewer url={pdfPath[next] ?? ''} />
                               </div>
                            </div>

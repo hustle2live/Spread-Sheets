@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { imageLoader } from './features/imageLoader';
+
 import FaceBookIco from '@/assets/icons/facebook-circle.png';
 import TelegramIco from '@/assets/icons/telegram-circle.png';
 
@@ -58,11 +59,7 @@ const Hero = () => {
                         />
                      </Link>
                      <span aria-hidden='true'> | </span>
-                     <Link
-                        href='https://www.facebook.com/by0710'
-                        target='_blank'
-                        className='font-semibold text-indigo-600'
-                     >
+                     <Link href='http://t.me/YesForSheets' target='_blank' className='font-semibold text-indigo-600'>
                         <Image
                            style={{ display: 'inline-block' }}
                            alt='facebook'

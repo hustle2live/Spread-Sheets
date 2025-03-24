@@ -5,12 +5,13 @@ import { imageLoader } from '@/app/components/features/imageLoader';
 
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 
+import { usePopup } from './popup/popupContext';
+
 import tableIconsBoth from '@/assets/pictures/xls-vs-sheets.png';
 import Excel from '@/assets/pictures/MS-Excel-Masterclass-1.webp';
 import Sheets from '@/assets/pictures/google-sheets-tables.png';
-import { usePopup } from './popup/popupContext';
 
-const TablesContent: React.FC = () => {
+const Instruments: React.FC = () => {
    const [isVisible, setIsVisible] = useState(false);
    const [duplicated, setDuplicated] = useState(false);
    const scrollReference = useRef<HTMLDivElement | null>(null);
@@ -68,7 +69,7 @@ const TablesContent: React.FC = () => {
             ></Image>
          </div>
 
-         <div className='flex flex-col gap-6 p-6 pt-0 lg:pt-6 description w-full lg:w-3/5 font-medium text-pretty text-gray-500 text-lg/6'>
+         <div className='flex flex-col gap-6 p-6 px-4 pt-0 lg:pt-6 description w-full lg:w-3/5 font-medium text-pretty text-gray-500 text-lg/6'>
             <div ref={scrollReference} className='scroller w-full p-4 px-0 -ms-3 overflow-hidden' data-animated='false'>
                <ul className='scroller__inner flex flex-nowrap gap-6 w-max'>
                   <li className='text-nowrap p-1 px-3 bg-opacity-20 rounded-full text-base bg-fuchsia-300 text-fuchsia-700 font-medium text-opacity-85 '>
@@ -110,7 +111,6 @@ const TablesContent: React.FC = () => {
                <br /> Вони допомагають у веденні розрахунків, аналізі даних і автоматизації процесів.
             </p>
 
-            {/* images */}
             <div className='flex lg:hidden m-auto justify:center mb-3 w-5/6 sm:w-3/4 md:w-3/5 lg:w-2/5 position-relative lg:mt-20 lg:-ms-5'>
                <div className='card w-1/2 h-auto sm:h-44 rounded-xl shadow-gray-200/50 shadow-lg border border-gray-200 overflow-hidden -rotate-6'>
                   <Image
@@ -134,7 +134,6 @@ const TablesContent: React.FC = () => {
                </div>
             </div>
 
-            {/* text  */}
             <p>
                <strong className='text-gray-800'>На цьому сайті</strong> ви знайдете цікаві розробки, створені автором.
                Можливо, вони надихнуть вас на власні проекти або допоможуть удосконалити те, що ви вже використовуєте.
@@ -174,4 +173,4 @@ const TablesContent: React.FC = () => {
    );
 };
 
-export default TablesContent;
+export { Instruments };
