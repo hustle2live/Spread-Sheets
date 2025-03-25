@@ -63,7 +63,7 @@ const SmallProduction: React.FC = () => {
                   </div>
                   <div className='w-full py-4 mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
                      <p className='mb-2 text-gray-900 text-lg/6 font-semibold '>{HTMLParser(data[0].header)}</p>
-                     <p className='text-sm text-gray-700 font-thin'>{HTMLParser(data[0].text)}</p>
+                     <p className='text-sm text-gray-700'>{HTMLParser(data[0].text)}</p>
                   </div>
                </div>
 
@@ -76,7 +76,7 @@ const SmallProduction: React.FC = () => {
                   </div>
                   <div className='w-full py-4 sm:mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
                      <p className='mb-2 text-gray-900 text-lg/6 font-semibold '>{HTMLParser(data[1].header)}</p>
-                     <p className='text-sm text-gray-700 font-thin'>{HTMLParser(data[1].text)}</p>
+                     <p className='text-sm text-gray-700'>{HTMLParser(data[1].text)}</p>
                   </div>
                </div>
             </div>
@@ -101,7 +101,7 @@ const SmallProduction: React.FC = () => {
 
                               <div className='w-full sm:w-1/2 mb-8 lg:py-0'>
                                  <p className='mb-2 text-gray-900 text-lg/6 font-semibold '>{HTMLParser(header)}</p>
-                                 <p className='text-sm text-gray-700 font-thin'>{HTMLParser(text)}</p>
+                                 <p className='text-sm text-gray-700'>{HTMLParser(text)}</p>
                               </div>
                            </div>
                         </div>
@@ -109,7 +109,7 @@ const SmallProduction: React.FC = () => {
                         <div key={`key_${idx}_${header}`} className='sm:px-6'>
                            <div className='w-full px-2 py-4 mb-8 lg:py-0'>
                               <p className='mb-2 text-gray-900 text-lg/6 font-semibold'>{HTMLParser(header)}</p>
-                              <p className='text-sm text-gray-700 font-thin'>{HTMLParser(text)}</p>
+                              <p className='text-sm text-gray-700'>{HTMLParser(text)}</p>
                            </div>
 
                            <div className='px-2 h-auto flex flex-wrap sm:flex-nowrap m-auto justify-between gap-6 rounded-md'>

@@ -59,7 +59,7 @@ const TablesGrid: React.FC = () => {
                      <hr className='w-full' />
                      <div className='p-6'>
                         <p className='my-2 text-gray-900 text-xl font-semibold '>{item.heading}</p>
-                        <p className='text-sm text-gray-700 font-thin'>{item.text}</p>
+                        <p className='text-sm text-gray-700'>{item.text}</p>
                      </div>
                   </div>
                );

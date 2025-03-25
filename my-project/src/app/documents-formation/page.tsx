@@ -52,7 +52,7 @@ const DocumentFormation: React.FC = () => {
                         </div>
                         <div className='w-full py-4 mb-8 lg:w-5/12 lg:px-6 lg:py-0'>
                            <p className='mb-2 text-gray-900 text-lg/6 font-semibold '>{HTMLParser(header)}</p>
-                           <p className='text-sm text-gray-700 font-thin'>{HTMLParser(text)}</p>
+                           <p className='text-sm text-gray-700'>{HTMLParser(text)}</p>
                         </div>
                      </div>
                   );

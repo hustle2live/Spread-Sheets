@@ -1,16 +1,22 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
+
+import { imageLoader } from './features/imageLoader';
+import { usePopup } from './popup/popupContext';
 
 import FaceBookIco from '@/assets/icons/facebook-circle.png';
 import TelegramIco from '@/assets/icons/telegram-circle.png';
-import Image from 'next/image';
-import { imageLoader } from './features/imageLoader';
 
-import { usePopup } from './popup/popupContext';
+import SpreadSheetSVG from '@/assets/icons/sheet/sheet(16).svg';
+import LogoImage from '@/assets/icons/sheet/sheet(12).svg';
+// import LogoImage from '@/assets/icons/logo/logo-gradient-sea-blue-img.png';
+import LogoImageTitle from '@/assets/icons/logo/logo-gradient-sea-blue-title.png';
 
 const Header: React.FC = () => {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,12 +35,18 @@ const Header: React.FC = () => {
       <header className='absolute inset-x-0 top-0 z-50 shadow-sm bg-white opacity-90'>
          <nav aria-label='Global' className='flex items-center justify-between p-6 lg:px-8'>
             <div className='flex lg:flex-1'>
-               <Link href='/#' className='-m-1.5 p-1.5'>
+               <Link href='/#' className='-m-1.5 p-1.5 flex'>
                   <span className='sr-only'>Your Company</span>
-                  <img
-                     alt='icon mark'
-                     src='https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600'
-                     className='h-8 w-auto'
+                  <Image
+                     src={LogoImage}
+                     height={38}
+                     width={38}
+                     loader={imageLoader}
+                     alt='spread sheets'
+                     style={{
+                        margin: '0 auto auto',
+                        filter: 'hue-rotate(50deg) contrast(120%) brightness(88%)'
+                     }}
                   />
                </Link>
             </div>

@@ -7,7 +7,9 @@
    --foreground: #171717;
    --bg-primary: rgb(241, 245, 249);
    --bg-secondary: rgb(229, 231, 235);
-   --primary-color: rgb(168, 85, 247);
+   --primary-color: rgb(125, 210, 240);
+   --primary-variant: rgb(168, 85, 247);
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -102,8 +104,6 @@ body {
 
 .hero__content {
    position: relative;
-   border-radius: 25% 25% / 50% 50%;
-   background: rgba(255, 255, 255, 0.75);
 
    &_main > section,
    &_main > p,

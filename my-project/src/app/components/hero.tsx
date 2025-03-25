@@ -2,16 +2,21 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
+
+import { usePopup } from './popup/popupContext';
 import { imageLoader } from './features/imageLoader';
 
+import SheetIco from '@/assets/icons/sheet/sheet(15).svg';
 import FaceBookIco from '@/assets/icons/facebook-circle.png';
 import TelegramIco from '@/assets/icons/telegram-circle.png';
 
 import abstractLines from '@/assets/pictures/abstract/lines(2).png';
 
 const Hero = () => {
-   const router = useRouter();
+   // const router = useRouter();
+
+   const { setShow } = usePopup();
 
    return (
       <div
@@ -96,17 +101,18 @@ const Hero = () => {
                   <button
                      className='rounded-lg border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5'
                      onClick={() => {
-                        router.push('/documents-formation');
+                        setShow(true);
                      }}
                   >
-                     Розпочати
+                     Замовити проект
+                     <Image src={SheetIco} loader={imageLoader} alt='sheets' width={18} height={18} />
                   </button>
                   <Link
                      className='rounded-lg border border-solid border-black/[.8] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44'
                      href='#content'
                      rel='noopener noreferrer'
                   >
-                     Дізнатися більше{' '}
+                     Приклади таблиць{' '}
                      <span className='ps-2' aria-hidden='true'>
                         →
                      </span>
