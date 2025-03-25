@@ -140,7 +140,7 @@ const Instruments: React.FC = () => {
             </p>
             <p>Ви можете отримати консультації автора, чи замовити проект для реалізації своїх власних задач</p>
             <button
-               className='rounded-lg border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-base py-2 px-4 w-auto m-auto ms-0 mt-1 font-medium'
+               className='rounded-lg border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] text-base py-2 px-4 w-auto m-auto ms-0 mt-1 font-medium'
                onClick={() => setShow(true)}
             >
                Отримати консультацію <ArrowUpRightIcon className='-ms-1 size-6' />

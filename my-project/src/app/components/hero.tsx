@@ -99,16 +99,17 @@ const Hero = () => {
                   className='py-5 px-10 flex gap-6 items-center justify-center flex-col sm:flex-row'
                >
                   <button
-                     className='rounded-lg border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5'
+                     className='rounded-lg border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5'
                      onClick={() => {
                         setShow(true);
                      }}
+                     style={{ minWidth: '176.53px' }}
                   >
                      Замовити проект
                      <Image src={SheetIco} loader={imageLoader} alt='sheets' width={18} height={18} />
                   </button>
                   <Link
-                     className='rounded-lg border border-solid border-black/[.8] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44'
+                     className='rounded-lg border border-solid border-black/[.8] transition-colors flex items-center justify-center hover:bg-[#f2f2f2]  hover:border-gray-300 text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44'
                      href='#content'
                      rel='noopener noreferrer'
                   >

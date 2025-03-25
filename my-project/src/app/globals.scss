@@ -8,15 +8,46 @@
    --bg-primary: rgb(241, 245, 249);
    --bg-secondary: rgb(229, 231, 235);
    --primary-color: rgb(125, 210, 240);
-   --primary-variant: rgb(168, 85, 247);
-
+   --primary-dark: rgb(0, 150, 255);
+   --primary-bg-dark: rgb(0, 75, 125);
+   --primary-bg-dark-med: rgb(0, 108, 180);
+   --secondary: rgb(168, 85, 247);
 }
 
-@media (prefers-color-scheme: dark) {
-   :root {
-      --background: #0a0a0a;
-      --foreground: #ededed;
+// @media (prefers-color-scheme: dark) {
+//    :root {
+//       --background: #0a0a0a;
+//       --foreground: #ededed;
+//    }
+// }
+
+.add-email {
+   height: 1.5rem;
+   overflow: hidden;
+
+   &.expanded {
+      height: fit-content;
+      padding-bottom: 0.2rem;
    }
+}
+
+.logo-icon path {
+   fill: var(--primary-dark);
+}
+
+.burger-menu-btn {
+   color: var(--background);
+   background: var(--primary-bg-dark-med);
+   &:hover {
+      opacity: 0.9;
+   }
+   &:active {
+      background: var(--primary-dark);
+   }
+}
+
+.popup-form {
+   background: var(--primary-bg-dark);
 }
 
 .text-primary {
