@@ -1,8 +1,8 @@
 'use client';
 
 import { useRef } from 'react';
-import Image from 'next/image';
-import { imageLoader } from '@/components/features/imageLoader';
+// import Image from 'next/image';
+// import { imageLoader } from '@/components/features/imageLoader';
 import { XMarkIcon } from '@heroicons/react/20/solid';
 
 import { usePopup } from './popupContext';

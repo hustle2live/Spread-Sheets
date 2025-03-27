@@ -23,7 +23,7 @@ const PdfViewerComponent: React.FC<TProps> = ({ url }: TProps) => {
       if (typeof window !== 'undefined') {
          setOrigin(window.location.origin.concat(url));
       }
-   }, []);
+   }, [url]);
 
    return (
       <div className='pdf-viewer relative h-full w-full overflow-hidden text-xs'>

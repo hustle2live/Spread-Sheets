@@ -13,10 +13,10 @@ import { usePopup } from './popup/popupContext';
 import FaceBookIco from '@/assets/icons/facebook-circle.png';
 import TelegramIco from '@/assets/icons/telegram-circle.png';
 
-import SpreadSheetSVG from '@/assets/icons/sheet/sheet(16).svg';
-import LogoImage from '@/assets/icons/sheet/sheet(12).svg';
+// import SpreadSheetSVG from '@/assets/icons/sheet/sheet(16).svg';
+// import LogoImage from '@/assets/icons/sheet/sheet(12).svg';
 // import LogoImage from '@/assets/icons/logo/logo-gradient-sea-blue-img.png';
-import LogoImageTitle from '@/assets/icons/logo/logo-gradient-sea-blue-title.png';
+// import LogoImageTitle from '@/assets/icons/logo/logo-gradient-sea-blue-title.png';
 
 const Header: React.FC = () => {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
