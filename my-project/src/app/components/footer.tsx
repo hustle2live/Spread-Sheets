@@ -1,9 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import FileSVG from '@/public/file.svg';
-import WindowSVG from '@/public/window.svg';
-import GlobeSVG from '@/public/globe.svg';
+// import FileSVG from '@/public/file.svg';
+// import WindowSVG from '@/public/window.svg';
+// import GlobeSVG from '@/public/globe.svg';
 import LogoText from '@/assets/icons/logo/logo-gradient-title.png';
 
 import { imageLoader } from '@/app/components/features/imageLoader';
@@ -11,14 +11,15 @@ import Link from 'next/link';
 
 const Footer: React.FC = () => {
    return (
-      <footer className=' bg-[#21262c] opacity-100  !text-[#cacaca]'>
-         <div className='container-fluid pt-20 xl:pt-28 lg:pt-28 md:pt-28 pb-16 xl:pb-20 lg:pb-20 md:pb-20 xxl:!px-10'>
+      <footer className='bg-[#21262c] opacity-100  !text-[#cacaca]'>
+         <div className='container-fluid px-4 pb-0 pt-0 xl:pt-28 lg:pt-28 md:pt-28 xl:pb-20 lg:pb-20 md:pb-20 xxl:!px-10'>
             <footer className=' bg-[#21262c] opacity-100  !text-[#cacaca] '>
                <div className='container py-16 xl:!py-20 lg:!py-20 md:!py-20 m-auto'>
                   <div className='flex flex-wrap mx-[-15px] !mt-[-30px] xl:!mt-0 lg:!mt-0'>
                      <div className='md:w-4/12 xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]'>
                         <div className='widget !text-[#cacaca]'>
-                           <h4 className='widget-title !text-white !mb-3'>YESS Private Interpreneur</h4>
+                           <h4 className='widget-title !text-white !mb-3 font-semibold'>Електронні таблиці Юрія</h4>
+                           <h4 className='widget-title !text-white !mb-3 '>Юрій Бугайов (ФОП Бугайов Ю.О.)</h4>
                            <Image
                               src={LogoText}
                               width={200}
@@ -63,12 +64,12 @@ const Footer: React.FC = () => {
                      </div>
                      <div className='md:w-4/12 xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]'>
                         <div className='widget !text-[#cacaca]'>
-                           <h4 className='widget-title !text-white !mb-3'>Get in Touch</h4>
+                           <h4 className='widget-title !text-white !mb-3'>Зв{`'`}яжіться зі мною</h4>
                            <address className='xl:!pr-20 xxl:!pr-28 not-italic !leading-[inherit] block !mb-4'>
-                              Moonshine St. 14/05 Light City, London, United Kingdom
+                              Україна, м.Київ
                            </address>
-                           <Link className='!text-[#cacaca] hover:!text-[#3f78e0]' href='mailto:first.last@email.com'>
-                              info@email.com
+                           <Link className='!text-[#cacaca] hover:!text-[#3f78e0]' href='mailto:yuras0720@gmail.com'>
+                              yuras0720@gmail.com
                            </Link>
                            <br /> 00 (123) 456 78 90
                         </div>

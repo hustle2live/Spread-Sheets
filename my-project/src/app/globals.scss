@@ -14,16 +14,9 @@
    --secondary: rgb(168, 85, 247);
 }
 
-// @media (prefers-color-scheme: dark) {
-//    :root {
-//       --background: #0a0a0a;
-//       --foreground: #ededed;
-//    }
-// }
-
 .add-email {
-   height: 1.5rem;
    overflow: hidden;
+   height: 1.5rem;
 
    &.expanded {
       height: fit-content;
